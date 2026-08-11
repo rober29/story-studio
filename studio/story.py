@@ -27,13 +27,15 @@ FORMATS = ("A", "B", "C", "D")
 # TODAS las historias en formato D, así que volver a renderizar una ya publicada
 # costaría sus imágenes otra vez. Los reels ya hechos no se tocan.
 D_STYLE = (
-    "simple hand-drawn cartoon. Characters are plain round heads with two dot eyes "
-    "and a tiny simple mouth, NO nose, NO eyebrows, no detailed faces; bodies are "
-    "simple flat shapes with thin limbs. Thin sketchy uneven ink outlines. EVERY "
-    "object in the scene is filled with soft colour, including animals and props. "
-    "Desaturated dusty palette. Hand-painted gouache background with visible brush "
-    "strokes and off-white paper texture. No gradients, no cel shading, no vector "
-    "art, no 3d render, no photorealism"
+    "simple hand-drawn doodle cartoon. EVERY character, main or background alike, "
+    "is drawn the same way: a big plain round head with two dot eyes and a tiny "
+    "simple mouth, no nose, no eyebrows; and THIN BLACK STICK ARMS AND LEGS drawn "
+    "as single thin lines, NEVER drawn limbs with sleeves, cuffs, gloves or "
+    "trousers. Clothing is ONE simple flat coloured shape on the torso only. Thin "
+    "sketchy uneven ink outlines. EVERY object is filled with soft colour, "
+    "including animals and props. Desaturated dusty palette. Hand-painted gouache "
+    "background with visible brush strokes and off-white paper texture. No "
+    "gradients, no cel shading, no vector art, no 3d render, no photorealism"
 )
 
 FORMAT_STYLE = {"D": D_STYLE}
