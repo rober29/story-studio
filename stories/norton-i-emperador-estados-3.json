@@ -1,0 +1,39 @@
+{
+  "id": "norton-i-emperador-estados-3",
+  "series": "historia-oculta",
+  "title": "Parte 3: El legado imperial",
+  "min_duration": 68,
+  "characters": {
+    "norton": "a middle-aged man with a large dark beard, wearing a worn blue military jacket with gold epaulets, dark trousers, and a tall hat adorned with a peacock feather"
+  },
+  "scenes": [
+    {
+      "text": "Cuando la policía local cometió la torpeza de arrestar a Norton por vagancia, la indignación popular de San Francisco explotó en todos los periódicos.",
+      "prompt": "Outside a Victorian police station, a large crowd of angry citizens on the left protesting, while {norton} stands calmly in the doorway at center next to nervous officers on the right."
+    },
+    {
+      "text": "El jefe de policía ordenó su liberación inmediata, le pidió disculpas públicas y decretó que los agentes debían saludar al emperador al verlo pasar.",
+      "prompt": "Inside the police chief's grand office, the chief of police on the left bowing politely and shaking hands with {norton} at center, while police officers salute formally on the right."
+    },
+    {
+      "text": "Durante más de dos décadas, Norton dictó célebres decretos imperiales exigiendo construir un puente hacia Oakland y disolver el congreso por su evidente corrupción política.",
+      "prompt": "{norton} standing on a wooden pier at center looking out over the misty San Francisco bay toward Oakland, holding a scroll in his hand, with seagulls flying overhead and ships on the left."
+    },
+    {
+      "text": "Aunque sus decretos parecían locuras extravagantes, décadas más tarde la ciudad construyó exactamente el enorme puente colgante que el visionario emperador había exigido siempre.",
+      "prompt": "A sweeping wide view showing {norton} on the left pointing across the bay, overlaid conceptually with a giant suspension bridge stretching toward hills on the right under dramatic skies."
+    },
+    {
+      "text": "Cuando Norton falleció de forma repentina en el año mil ochocientos ochenta, más de treinta mil personas acudieron a su funeral para despedir al querido monarca.",
+      "prompt": "A solemn and massive funeral procession along San Francisco streets, with a horse-drawn hearse in the center surrounded by thousands of mourning citizens holding flowers on the left and right."
+    },
+    {
+      "text": "En sus bolsillos solo encontraron unos pocos dólares y varios de sus propios billetes imperiales, los cuales hoy valen miles de dólares entre coleccionistas.",
+      "prompt": "An antique auction room filled with light, where an auctioneer at center holds up a pristine imperial banknote, with eager collectors bidding with paddle signs on the left and right."
+    },
+    {
+      "text": "Así termina la fascinante historia de un hombre sin riquezas que demostró que el verdadero valor del dinero nace del afecto y la fe de una comunidad.",
+      "prompt": "A golden hour wide view of San Francisco city bay, with a subtle shadowy silhouette of {norton} standing atop a hill in center looking over the modern city skyline stretching left to right."
+    }
+  ]
+}

@@ -1,0 +1,341 @@
+{
+ "version": 1,
+ "temas": [
+  {
+   "slug": "guerra-asiento",
+   "titulo": "La Guerra del Asiento",
+   "categoria": "evento-historico",
+   "epoca": "Caribe siglo XVIII",
+   "gancho": "Un conflicto armado entre imperios fue oficialmente desencadenado cuando un capitán español le cortó la oreja a un contrabandista británico.",
+   "estado": "usado",
+   "modo": "corto",
+   "historias": [
+    "guerra-asiento"
+   ],
+   "fecha": "2026-08-11"
+  },
+  {
+   "slug": "norton-i-emperador-estados",
+   "titulo": "Norton I, Emperador de Estados Unidos",
+   "categoria": "personaje-historico",
+   "epoca": "EE. UU. siglo XIX",
+   "gancho": "Emitió su propio dinero en papel que los comerciantes locales de San Francisco aceptaban como moneda legítima por pura simpatía.",
+   "estado": "usado",
+   "modo": "extendido",
+   "historias": [
+    "norton-i-emperador-estados-1",
+    "norton-i-emperador-estados-2",
+    "norton-i-emperador-estados-3"
+   ],
+   "fecha": "2026-08-11"
+  },
+  {
+   "slug": "engano-prometeo-mecona",
+   "titulo": "El engaño de Prometeo en Mecona",
+   "categoria": "evento-mitologico",
+   "epoca": "Mitología griega",
+   "gancho": "Engañó al rey de los dioses para que aceptara las peores partes de los animales sacrificados, dejando la mejor carne para el sustento humano.",
+   "estado": "pendiente",
+   "modo": null,
+   "historias": [],
+   "fecha": null
+  },
+  {
+   "slug": "rey-midas",
+   "titulo": "El rey Midas",
+   "categoria": "personaje-mitologico",
+   "epoca": "Mitología griega",
+   "gancho": "Su deseo de transformar en oro todo lo que tocaba lo llevó al borde de la muerte cuando convirtió sus alimentos y a su propia hija en metal.",
+   "estado": "pendiente",
+   "modo": null,
+   "historias": [],
+   "fecha": null
+  },
+  {
+   "slug": "motin-boston",
+   "titulo": "El motín del té de Boston",
+   "categoria": "evento-historico",
+   "epoca": "América colonial",
+   "gancho": "Colonos disfrazados arrojaron al mar toneladas de té para protestar contra las exenciones fiscales otorgadas a la Compañía de las Indias Orientales.",
+   "estado": "pendiente",
+   "modo": null,
+   "historias": [],
+   "fecha": null
+  },
+  {
+   "slug": "mansa-musa-mali",
+   "titulo": "Mansa Musa de Malí",
+   "categoria": "personaje-historico",
+   "epoca": "África medieval",
+   "gancho": "Regaló tanto oro durante su peregrinación a La Meca que provocó una inflación devastadora que arruinó la economía egipcia por una década.",
+   "estado": "pendiente",
+   "modo": null,
+   "historias": [],
+   "fecha": null
+  },
+  {
+   "slug": "robo-martillo-mjolnir",
+   "titulo": "El robo del martillo Mjolnir",
+   "categoria": "evento-mitologico",
+   "epoca": "Mitología nórdica",
+   "gancho": "Para recuperar su arma robada por un gigante, el feroz dios del trueno tuvo que vestirse de novia y simular un banquete bodil.",
+   "estado": "pendiente",
+   "modo": null,
+   "historias": [],
+   "fecha": null
+  },
+  {
+   "slug": "dios-loki",
+   "titulo": "El dios Loki",
+   "categoria": "personaje-mitologico",
+   "epoca": "Mitología nórdica",
+   "gancho": "Apostó su propia cabeza en un trato y evitó la ejecución argumentando legalmente que los herreros no podían cortar su cuello sin dañar su cabeza.",
+   "estado": "pendiente",
+   "modo": null,
+   "historias": [],
+   "fecha": null
+  },
+  {
+   "slug": "mania-tulipanes",
+   "titulo": "La manía de los tulipanes",
+   "categoria": "evento-historico",
+   "epoca": "Holanda siglo XVII",
+   "gancho": "La especulación descontrolada provocó que un único bulbo de flor llegara a costar más que una mansión de lujo antes de que el mercado colapsara en días.",
+   "estado": "pendiente",
+   "modo": null,
+   "historias": [],
+   "fecha": null
+  },
+  {
+   "slug": "enrique-viii-inglaterra",
+   "titulo": "Enrique VIII de Inglaterra",
+   "categoria": "personaje-historico",
+   "epoca": "Inglaterra Tudor",
+   "gancho": "Mezcló cobre en las monedas de plata para financiar sus guerras, provocando que el cobre rebasara en su nariz grabada y ganándose el apodo de viejo nariz de cobre.",
+   "estado": "pendiente",
+   "modo": null,
+   "historias": [],
+   "fecha": null
+  },
+  {
+   "slug": "pesaje-corazon-duat",
+   "titulo": "El pesaje del corazón en el Duat",
+   "categoria": "evento-mitologico",
+   "epoca": "Mitología egipcia",
+   "gancho": "El alma de los muertos era juzgada colocando su corazón en una balanza frente a una pluma para decidir si eran devorados por un monstruo.",
+   "estado": "pendiente",
+   "modo": null,
+   "historias": [],
+   "fecha": null
+  },
+  {
+   "slug": "rey-ravana",
+   "titulo": "El rey Ravana",
+   "categoria": "personaje-mitologico",
+   "epoca": "Mitología hindú",
+   "gancho": "Gobernó la próspera capital de Lanka construida totalmente en oro, pero su soberbia al secuestrar a una princesa causó la destrucción total de su imperio.",
+   "estado": "pendiente",
+   "modo": null,
+   "historias": [],
+   "fecha": null
+  },
+  {
+   "slug": "impuesto-ventanas",
+   "titulo": "El impuesto sobre las ventanas",
+   "categoria": "evento-historico",
+   "epoca": "Inglaterra siglo XVII",
+   "gancho": "La corona gravó las viviendas según sus tragaluces, lo que llevó a miles de ciudadanos a tapiar sus ventanas dejando las casas en la oscuridad.",
+   "estado": "pendiente",
+   "modo": null,
+   "historias": [],
+   "fecha": null
+  },
+  {
+   "slug": "qin-shi-huang",
+   "titulo": "Qin Shi Huang",
+   "categoria": "personaje-historico",
+   "epoca": "China antigua",
+   "gancho": "Gastó una fortuna enorme en alquimistas y consumió mercurio diario pensando que alcanzaría la vida eterna, lo que le causó una muerte prematura.",
+   "estado": "pendiente",
+   "modo": null,
+   "historias": [],
+   "fecha": null
+  },
+  {
+   "slug": "leyenda-dorado",
+   "titulo": "La leyenda de El Dorado",
+   "categoria": "evento-mitologico",
+   "epoca": "Mitología incaica",
+   "gancho": "El mito de un jefe tribal cubierto en polvo de oro impulsó a conquistadores a arruinar sus fortunas y vidas buscando una ciudad que jamás existió.",
+   "estado": "pendiente",
+   "modo": null,
+   "historias": [],
+   "fecha": null
+  },
+  {
+   "slug": "monstruo-fafnir",
+   "titulo": "El monstruo Fafnir",
+   "categoria": "personaje-mitologico",
+   "epoca": "Mitología germánica",
+   "gancho": "Un príncipe fue consumido por la avaricia de un tesoro maldito hasta mutar físicamente en un dragón dispuesto a vigilar su oro por la eternidad.",
+   "estado": "pendiente",
+   "modo": null,
+   "historias": [],
+   "fecha": null
+  },
+  {
+   "slug": "batalla-karansebes",
+   "titulo": "La batalla de Karánsebes",
+   "categoria": "evento-historico",
+   "epoca": "Europa siglo XVIII",
+   "gancho": "Un ejército entero entró en pánico y se atacó a sí mismo en medio de la noche por un altercado originado por barriles de aguardiente.",
+   "estado": "pendiente",
+   "modo": null,
+   "historias": [],
+   "fecha": null
+  },
+  {
+   "slug": "carlos-vi-francia",
+   "titulo": "Carlos VI de Francia",
+   "categoria": "personaje-historico",
+   "epoca": "Francia medieval",
+   "gancho": "Convencido de que su cuerpo estaba hecho de frágil cristal, cosió varillas de hierro en sus ropas para evitar romperse al menor contacto.",
+   "estado": "pendiente",
+   "modo": null,
+   "historias": [],
+   "fecha": null
+  },
+  {
+   "slug": "inundacion-gunyu",
+   "titulo": "La inundación de Gun-Yu",
+   "categoria": "evento-mitologico",
+   "epoca": "Mitología china",
+   "gancho": "Un héroe dominó el gran cataclismo mediante el dragado de canales fluviales en lugar de presas, rehusando volver a su casa durante trece años de trabajo.",
+   "estado": "pendiente",
+   "modo": null,
+   "historias": [],
+   "fecha": null
+  },
+  {
+   "slug": "heroe-sun-wukong",
+   "titulo": "El héroe Sun Wukong",
+   "categoria": "personaje-mitologico",
+   "epoca": "Mitología china",
+   "gancho": "Se infiltró en el inframundo y borró su nombre y el de sus seguidores del registro de los muertos para conseguir la inmortalidad por la vía burocrática.",
+   "estado": "pendiente",
+   "modo": null,
+   "historias": [],
+   "fecha": null
+  },
+  {
+   "slug": "impuesto-barba-pedro-grande",
+   "titulo": "El impuesto a la barba de Pedro el Grande",
+   "categoria": "evento-historico",
+   "epoca": "Rusia zarista",
+   "gancho": "Para modernizar el país, el zar obligó a pagar un tributo anual a quien quisiera conservar su barba y llevar colgada una medalla de cobre que lo probara.",
+   "estado": "pendiente",
+   "modo": null,
+   "historias": [],
+   "fecha": null
+  },
+  {
+   "slug": "isabel-i-rusia",
+   "titulo": "Isabel I de Rusia",
+   "categoria": "personaje-historico",
+   "epoca": "Rusia siglo XVIII",
+   "gancho": "Publicó decretos reales que prohibían a cualquier mujer de la corte usar el mismo peinado o vestido que ella bajo pena de azotes.",
+   "estado": "pendiente",
+   "modo": null,
+   "historias": [],
+   "fecha": null
+  },
+  {
+   "slug": "mito-quinto-sol",
+   "titulo": "El mito del quinto sol",
+   "categoria": "evento-mitologico",
+   "epoca": "Mitología azteca",
+   "gancho": "Los dioses crearon y destruyeron cuatro soles anteriores debido a luchas de poder antes de sacrificar sus propias vidas para encender el quinto sol.",
+   "estado": "pendiente",
+   "modo": null,
+   "historias": [],
+   "fecha": null
+  },
+  {
+   "slug": "heroe-gilgamesh",
+   "titulo": "El héroe Gilgamesh",
+   "categoria": "personaje-mitologico",
+   "epoca": "Mitología sumeria",
+   "gancho": "Buscó desesperadamente la hierba de la inmortalidad tras la muerte de su amigo, solo para que una serpiente se la robara mientras se bañaba.",
+   "estado": "pendiente",
+   "modo": null,
+   "historias": [],
+   "fecha": null
+  },
+  {
+   "slug": "guerra-cerdo",
+   "titulo": "La Guerra del Cerdo",
+   "categoria": "evento-historico",
+   "epoca": "Norteamérica siglo XIX",
+   "gancho": "Dos potencias mundiales desplegaron buques de guerra tras la muerte de un cerdo que devoró las patatas de un granjero vecino en una isla disputada.",
+   "estado": "pendiente",
+   "modo": null,
+   "historias": [],
+   "fecha": null
+  },
+  {
+   "slug": "justiniano-ii",
+   "titulo": "Justiniano II",
+   "categoria": "personaje-historico",
+   "epoca": "Imperio bizantino",
+   "gancho": "Tras ser depuesto y sufrir la mutilación de su nariz, regresó años después con una prótesis de oro para recuperar el trono y ejecutar a sus rivales.",
+   "estado": "pendiente",
+   "modo": null,
+   "historias": [],
+   "fecha": null
+  },
+  {
+   "slug": "anzuelo-magico-maui",
+   "titulo": "El anzuelo mágico de Maui",
+   "categoria": "evento-mitologico",
+   "epoca": "Mitología polinesia",
+   "gancho": "Engañó a sus hermanos durante una jornada de pesca y enganchó el fondo del océano para arrastrar islas enteras a la superficie.",
+   "estado": "pendiente",
+   "modo": null,
+   "historias": [],
+   "fecha": null
+  },
+  {
+   "slug": "dios-susanoo",
+   "titulo": "El dios Susanoo",
+   "categoria": "personaje-mitologico",
+   "epoca": "Mitología japonesa",
+   "gancho": "Fue desterrado de los cielos y emborrachó a una serpiente gigante de ocho cabezas con sake para matarla y arrebatarle una espada legendaria.",
+   "estado": "pendiente",
+   "modo": null,
+   "historias": [],
+   "fecha": null
+  },
+  {
+   "slug": "escandalo-collar-reina",
+   "titulo": "El escándalo del collar de la reina",
+   "categoria": "evento-historico",
+   "epoca": "Francia siglo XVIII",
+   "gancho": "Una estafadora falsificó la firma de la reina para apoderarse de una joya impagable de más de dos mil ochocientos quilates, acelerando la desacreditación de la monarquía.",
+   "estado": "pendiente",
+   "modo": null,
+   "historias": [],
+   "fecha": null
+  },
+  {
+   "slug": "timoleon-siracusa",
+   "titulo": "Timoleón de Siracusa",
+   "categoria": "personaje-historico",
+   "epoca": "Grecia clásica",
+   "gancho": "Para financiar la reconstrucción de la ciudad, subastó públicamente todas las estatuas de bronce de los antiguos tiranos con excepción de una sola.",
+   "estado": "pendiente",
+   "modo": null,
+   "historias": [],
+   "fecha": null
+  }
+ ]
+}

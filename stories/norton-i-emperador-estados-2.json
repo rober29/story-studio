@@ -1,0 +1,39 @@
+{
+  "id": "norton-i-emperador-estados-2",
+  "series": "historia-oculta",
+  "title": "Parte 2: El dinero del emperador",
+  "min_duration": 68,
+  "characters": {
+    "norton": "a middle-aged man with a large dark beard, wearing a worn blue military jacket with gold epaulets, dark trousers, and a tall hat adorned with a peacock feather"
+  },
+  "scenes": [
+    {
+      "text": "Tras quedarse sin un centavo oficial, el ingenioso emperador Norton decidió solucionar su liquidez emitiendo sus propios billetes de banco impresos en papel por una imprenta.",
+      "prompt": "Inside a dimly lit 1860s print shop, {norton} standing at the center watching a printer work on a hand-operated press on the left, with stacks of freshly printed paper notes drying on tables on the right."
+    },
+    {
+      "text": "Estos billetes imperiales de cincuenta centavos y diez dólares prometían pagar un interés del siete por ciento a partir del año mil ochocientos ochenta.",
+      "prompt": "An overhead wide shot of a wooden table where {norton} on the left is signing elaborate promissory notes, with ink bottles and gold wax seals placed on the right under soft lamp glow."
+    },
+    {
+      "text": "Lo más sorprendente fue que los tenderos, taberneros y restauradores de San Francisco comenzaron a aceptar estos billetes ficticios como si fueran dinero real.",
+      "prompt": "Inside a bustling wooden saloon, {norton} at center presenting his paper note to a friendly bartender behind the counter on the left, while patrons drink and play cards at tables on the right."
+    },
+    {
+      "text": "No lo hacían por ignorancia alguna, sino por el profundo cariño que sentían hacia el entrañable personaje que alegraba diariamente las calles de la bahía.",
+      "prompt": "A vibrant street market in San Francisco, with {norton} walking down the central aisle, market stalls selling fresh fruits on the left, and laughing townsfolk greeting him on the right."
+    },
+    {
+      "text": "Los comerciantes locales incluso colocaban orgullosos en sus escaparates grandes carteles anunciando que el local contaba con el sello oficial de Su Majestad Imperial.",
+      "prompt": "Exterior of a 19th-century bakery, with {norton} standing proudly on the right looking at a framed imperial seal hanging on the shop front window on the left, as passersby walk on the street."
+    },
+    {
+      "text": "Norton pagaba todos sus desayunos y compras diarias con sus billetes firmados a mano, cobrando también un modesto impuesto imperial que los vecinos abonaban siempre felices.",
+      "prompt": "A cozy cafe interior, where {norton} sits at a central table handing a custom note to a waitress on the right, while a baker behind the left counter smiles warmly."
+    },
+    {
+      "text": "Todo funcionaba perfectamente en la ciudad hasta que un día, un policía novato cometió el gravísimo error de arrestar al mismísimo emperador bajo el cargo de vagancia.",
+      "prompt": "A dramatic street scene at dusk, where a young policeman on the left places a hand on {norton}'s shoulder at center, while shocked bystanders react in surprise on the right."
+    }
+  ]
+}
