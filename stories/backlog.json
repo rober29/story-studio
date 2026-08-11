@@ -37,10 +37,13 @@
    "categoria": "personaje-historico",
    "epoca": "África medieval",
    "gancho": "Regaló tanto oro durante su peregrinación a La Meca que provocó una inflación devastadora que arruinó la economía egipcia por una década.",
-   "estado": "pendiente",
-   "modo": null,
-   "historias": [],
-   "fecha": null,
+   "estado": "usado",
+   "modo": "corto",
+   "historias": [
+    "mansa-musa-mali",
+    "mansa-musa-mali-en"
+   ],
+   "fecha": "2026-08-11",
    "motivo": "consecuencia-economica"
   },
   {

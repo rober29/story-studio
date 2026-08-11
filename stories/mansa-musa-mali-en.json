@@ -1,0 +1,40 @@
+{
+ "id": "mansa-musa-mali-en",
+ "series": "hidden-history",
+ "images_from": "mansa-musa-mali",
+ "title": "Mansa Musa and the Great Inflation",
+ "min_duration": 68,
+ "characters": {
+  "mansamusa": "A 40-year-old West African king, dark skin, regal posture, wearing a bright yellow royal robe, a golden crown shaped like a turban, and holding a gold nugget."
+ },
+ "scenes": [
+  {
+   "text": "Can you actually imagine being so absurdly wealthy that handing out huge tips ruined the entire economy of a country for a decade? This unbelievable story genuinely happened in the fourteenth century.",
+   "prompt": "Wide shot of {mansamusa} standing in the center of a bustling medieval market, casually tossing golden coins into the air. On the left, merchants look shocked at empty scales. On the right, beggars collect piles of gold. In the background, ancient city buildings and palm trees stand under a bright sunny sky."
+  },
+  {
+   "text": "The man responsible was Mansa Musa, ruler of the Mali Empire. He is widely considered the wealthiest human being in history, thanks to his vast and limitless gold and salt mines.",
+   "prompt": "Wide shot of {mansamusa} sitting on a grand golden throne at the center of a royal courtyard. On the left, servants stack enormous bars of gold. On the right, traders exchange bags of salt. In the background, soldiers guard the palace gates under brilliant daylight."
+  },
+  {
+   "text": "In the year thirteen twenty-four, he decided to undertake a grand pilgrimage to Mecca. He did not travel alone, but with a massive procession consisting of sixty thousand loyal people.",
+   "prompt": "Wide shot of {mansamusa} riding a majestic horse at the center of a massive desert caravan. On the left, thousands of attendants march in fine silk clothes. On the right, line of camels carry heavy chests. In the background, vast sand dunes stretch under the blue sky."
+  },
+  {
+   "text": "His legendary caravan crossed the harsh desert carrying eighty camels. Each camel loaded over one hundred kilos of pure gold, which Musa joyously distributed among all the poor along his path.",
+   "prompt": "Wide shot of {mansamusa} leading his caravan through rolling desert dunes. On the left, camels loaded with golden sacks rest near an oasis. On the right, grateful travelers bow down. In the background, a long procession extends toward the horizon under a blazing sun."
+  },
+  {
+   "text": "Upon reaching Cairo, giving away so much precious metal completely destabilized everything. The value of gold crashed suddenly because of a massive oversupply that overwhelmed the local Egyptian markets.",
+   "prompt": "Wide shot of {mansamusa} arriving at the city gate of Cairo at the center. On the left, Egyptian officials welcome him with open arms. On the right, market vendors are overwhelmed by mountains of gold coins on their stalls. In the background, minarets and city walls fill the skyline."
+  },
+  {
+   "text": "Prices for basic everyday goods skyrocketed out of control, and crippling inflation strangled Egypt for twelve long years, proving that excessive wealth can completely destroy fragile economic markets.",
+   "prompt": "Wide shot of {mansamusa} watching a chaotic Cairo marketplace at the center. On the left, upset merchants wave worthless gold coins in frustration. On the right, shoppers panic as bread prices spike on display tables. In the background, crowds wave arms in despair under a hazy sky."
+  },
+  {
+   "text": "To fix this major disaster, Musa had to stabilize the economy by buying back his own gold at exorbitant interest rates. It was extreme generosity with totally catastrophic long term consequences.",
+   "prompt": "Wide shot of {mansamusa} negotiating at a large wooden table at the center of a royal tent. On the left, bankers count high-interest loan documents. On the right, chests of gold are being reclaimed. In the background, desert sands blow softly in the evening twilight."
+  }
+ ]
+}

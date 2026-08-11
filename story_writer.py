@@ -69,8 +69,14 @@ FORMAT_HINTS = {
         "cerrado no da de sí para cuatro encuadres y los cortes parecerán "
         "repetidos.\n"
         "Usa un personaje recurrente definido en 'characters' y refiérelo con "
-        "{nombre} en todas las escenas donde aparezca. Tono divulgativo con "
-        "humor seco."
+        "{nombre} en todas las escenas donde aparezca.\n"
+        "CADA descripción de personaje TIENE que empezar literalmente por "
+        "'a stick figure with a round white head and dot eyes,' y seguir solo "
+        "con ropa y objetos CON COLOR. Nada de edad, piel, pelo, complexión ni "
+        "'regal posture': eso arrastra al generador a dibujo semirrealista y el "
+        "reel deja de parecerse a los demás del canal, aunque el estilo global "
+        "diga monigotes.\n"
+        "Tono divulgativo con humor seco."
     ),
 }
 
