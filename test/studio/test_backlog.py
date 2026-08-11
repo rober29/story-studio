@@ -268,6 +268,61 @@ class TestIntercalar(unittest.TestCase):
         self.assertEqual(backlog.intercalar([]), [])
 
 
+class TestMotivo(unittest.TestCase):
+    """El eje que importa es la moraleja, no la taxonomía.
+
+    'El rey Midas' y 'El monstruo Fafnir' son los dos personajes mitológicos
+    —misma categoría— y cuentan la misma historia: la codicia por el oro
+    arruinando a alguien. Repartir por categoría los dejaría seguidos.
+    """
+
+    def test_el_motivo_manda_sobre_la_categoria(self):
+        self.assertEqual(
+            backlog.clave_reparto({"motivo": "codicia", "categoria": "personaje-mitologico"}),
+            "codicia",
+        )
+
+    def test_sin_motivo_se_cae_a_la_categoria(self):
+        self.assertEqual(
+            backlog.clave_reparto({"categoria": "evento-historico"}), "evento-historico"
+        )
+
+    def test_separa_dos_de_la_misma_categoria_con_motivos_distintos(self):
+        entrada = [
+            tema("midas", "Midas", categoria="personaje-mitologico", motivo="codicia"),
+            tema("fafnir", "Fafnir", categoria="personaje-mitologico", motivo="codicia"),
+            tema("loki", "Loki", categoria="personaje-mitologico", motivo="engano"),
+        ]
+        orden = [t["slug"] for t in backlog.intercalar(entrada)]
+        # el de engaño tiene que quedar entre los dos de codicia
+        self.assertEqual(orden.index("loki"), 1)
+
+    def test_racimos_ordena_por_repeticion(self):
+        entrada = [
+            tema("a", "A", motivo="engano"), tema("b", "B", motivo="engano"),
+            tema("c", "C", motivo="engano"), tema("d", "D", motivo="codicia"),
+            tema("e", "E", motivo="codicia"), tema("f", "F", motivo="venganza"),
+        ]
+        agrupados = backlog.racimos(entrada)
+        self.assertEqual([m for m, _ in agrupados], ["engano", "codicia"])
+        self.assertEqual(len(agrupados[0][1]), 3)
+
+    def test_racimos_ignora_los_que_no_se_repiten(self):
+        entrada = [tema("a", "A", motivo="engano"), tema("b", "B", motivo="codicia")]
+        self.assertEqual(backlog.racimos(entrada), [])
+
+    def test_racimos_ignora_los_temas_sin_motivo(self):
+        entrada = [tema("a", "A"), tema("b", "B"), tema("c", "C")]
+        self.assertEqual(backlog.racimos(entrada), [])
+
+    def test_el_reparto_cuenta_tambien_el_motivo(self):
+        d = datos(
+            tema("a", "A", "usado", modo="corto", historias=["a"], motivo="codicia"),
+            tema("b", "B", "usado", modo="corto", historias=["b"], motivo="codicia"),
+        )
+        self.assertEqual(backlog.reparto(d)["motivo"]["codicia"], 2)
+
+
 class TestAnadir(unittest.TestCase):
     def test_salta_los_slugs_que_ya_estaban(self):
         d = datos(tema("a", "Alfa"))

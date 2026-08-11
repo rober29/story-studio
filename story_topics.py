@@ -45,9 +45,10 @@ SCHEMA = {
                     "titulo": {"type": "string"},
                     "categoria": {"type": "string"},
                     "epoca": {"type": "string"},
+                    "motivo": {"type": "string"},
                     "gancho": {"type": "string"},
                 },
-                "required": ["titulo", "categoria", "epoca", "gancho"],
+                "required": ["titulo", "categoria", "epoca", "motivo", "gancho"],
             },
         }
     },
@@ -107,9 +108,17 @@ REGLAS:
    sabes escribirlo, el tema no es bueno.
 4. 'epoca' sitúa el tema con dos o tres palabras: "Roma antigua", "Japón feudal",
    "Europa siglo XIX", "Mesopotamia".
-5. Nada de temas que dependan de imágenes reales de personas vivas o de sucesos
+5. 'motivo' es la MORALEJA en una o dos palabras con guion, en minúsculas: lo
+   que el espectador se lleva. Reutiliza estas cuando encajen —codicia, engano,
+   inmortalidad, impuesto-absurdo, guerra-absurda, locura-de-poder,
+   burbuja-economica, fraude, venganza, perseverancia— y solo inventa una nueva
+   si ninguna sirve. Es el campo que evita publicar en la misma semana dos
+   historias distintas que terminan igual: "el rey Midas" y "el dragón Fafnir"
+   son temas distintos y los dos son 'codicia'.
+6. Nada de temas que dependan de imágenes reales de personas vivas o de sucesos
    del último siglo con víctimas identificables.
-6. VARIEDAD: no más de dos temas de la misma época o civilización.
+7. VARIEDAD: no más de dos temas de la misma época o civilización, y no más de
+   tres que compartan 'motivo'.
 
 NO REPITAS NI REFORMULES NINGUNO DE ESTOS, que ya están hechos o en cola:
 {ya_hechos}
@@ -127,6 +136,7 @@ def normaliza(candidato, ocupados):
         "titulo": titulo,
         "categoria": categoria if categoria in backlog.CATEGORIES else "",
         "epoca": (candidato.get("epoca") or "").strip(),
+        "motivo": (candidato.get("motivo") or "").strip().lower(),
         "gancho": (candidato.get("gancho") or "").strip(),
         "estado": "pendiente",
         "modo": None,
@@ -199,11 +209,20 @@ def listar(data):
     if libres:
         print("PENDIENTES (en orden de prioridad):")
         for i, tema in enumerate(libres, 1):
-            etiqueta = tema.get("epoca") or tema.get("categoria") or ""
+            etiquetas = " · ".join(
+                v for v in (tema.get("motivo"), tema.get("epoca")) if v
+            )
             print(f"  {i:>3}. {tema['titulo']}")
-            if etiqueta:
-                print(f"       {etiqueta}")
+            if etiquetas:
+                print(f"       {etiquetas}")
         print()
+
+        agrupados = backlog.racimos(libres)
+        if agrupados:
+            print("MOTIVOS QUE SE REPITEN (mira que no salgan seguidos):")
+            for motivo, titulos in agrupados:
+                print(f"  {motivo} ({len(titulos)}): {'; '.join(titulos)}")
+            print()
 
     if gastados:
         print("USADOS:")

@@ -119,6 +119,10 @@ def validate(data, source="<backlog>"):
         if estado == "usado" and not modo:
             raise StudioError(f"{donde}: un tema usado tiene que declarar 'modo'")
         tema.setdefault("epoca", "")
+        # Etiqueta libre, no una enumeración cerrada: obligar al modelo a elegir
+        # de una lista fija le hace forzar encajes malos, y el reparto funciona
+        # con cualquier cadena mientras se repita entre temas parecidos.
+        tema.setdefault("motivo", "")
         tema.setdefault("gancho", "")
         tema.setdefault("historias", [])
         tema.setdefault("fecha", None)
@@ -167,14 +171,30 @@ def reparto(data):
     Sirve para ver el agrupamiento: cinco emperadores romanos seguidos no se
     detectan leyendo un tema, se detectan mirando el reparto.
     """
-    por_categoria = {}
-    por_epoca = {}
+    cuentas = {"categoria": {}, "epoca": {}, "motivo": {}}
     for tema in usados(data):
-        cat = tema.get("categoria") or "(sin categoría)"
-        epoca = tema.get("epoca") or "(sin época)"
-        por_categoria[cat] = por_categoria.get(cat, 0) + 1
-        por_epoca[epoca] = por_epoca.get(epoca, 0) + 1
-    return {"categoria": por_categoria, "epoca": por_epoca}
+        for eje in cuentas:
+            valor = tema.get(eje) or f"(sin {eje})"
+            cuentas[eje][valor] = cuentas[eje].get(valor, 0) + 1
+    return cuentas
+
+
+def racimos(temas, minimo=2):
+    """Motivos que se repiten en la lista dada, del más repetido al menos.
+
+    Es lo que hay que mirar al curar un lote: el duplicado que importa no es el
+    tema repetido —eso lo caza es_duplicado— sino el motivo repetido, que hace
+    que dos historias distintas se sientan la misma.
+    """
+    cuenta = {}
+    for tema in temas:
+        clave = tema.get("motivo") or ""
+        if clave:
+            cuenta.setdefault(clave, []).append(tema["titulo"])
+    return sorted(
+        ((m, t) for m, t in cuenta.items() if len(t) >= minimo),
+        key=lambda par: (-len(par[1]), par[0]),
+    )
 
 
 # --------------------------------------------------------------------------
@@ -204,8 +224,24 @@ def marcar_usado(data, slug, modo, historias, fecha=None):
     return tema
 
 
-def intercalar(temas):
-    """Reordena en round-robin por categoría, sin perder ninguno.
+def clave_reparto(tema):
+    """Eje por el que separar los temas. El motivo manda sobre la categoría.
+
+    Revisando el primer lote real salió claro que la categoría no es el eje que
+    importa: 'El rey Midas' y 'El monstruo Fafnir' son los dos personajes
+    mitológicos —misma categoría— y cuentan la MISMA historia, la codicia por
+    el oro arruinando a alguien. Categorías distintas pueden repetir motivo y
+    categorías iguales pueden no repetirlo.
+
+    Lo que el espectador percibe como "esto ya lo vi" es el motivo, no la
+    taxonomía. Por eso se separa por ahí, y solo se cae a la categoría cuando
+    el tema no lo declara.
+    """
+    return tema.get("motivo") or tema.get("categoria") or ""
+
+
+def intercalar(temas, clave=clave_reparto):
+    """Reordena en round-robin, sin perder ninguno.
 
     Medido con el primer lote real: al pedir treinta temas "repartidos entre
     las cuatro categorías", el modelo los devuelve AGRUPADOS —ocho monarcas,
@@ -213,12 +249,12 @@ def intercalar(temas):
     del archivo, eso publicaría ocho reyes seguidos.
 
     Pedírselo al modelo en el prompt no es fiable; reordenar aquí sí. Dentro de
-    cada categoría se conserva el orden original, que es donde el modelo sí
-    aporta criterio.
+    cada grupo se conserva el orden original, que es donde el modelo sí aporta
+    criterio.
     """
     grupos = {}
     for tema in temas:
-        grupos.setdefault(tema.get("categoria") or "", []).append(tema)
+        grupos.setdefault(clave(tema), []).append(tema)
 
     orden = sorted(grupos, key=lambda c: (-len(grupos[c]), c))
     salida = []
