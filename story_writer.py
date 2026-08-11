@@ -379,7 +379,9 @@ def main():
         # el gancho es lo que hace contable el tema: el título solo nombra al
         # sujeto ("Mansa Musa de Malí"), el gancho trae la historia
         topic = ". ".join(p for p in (tema["titulo"], tema.get("gancho")) if p)
-        out = out or os.path.join(STORIES_DIR, f"{tema['slug']}.json")
+        # el idioma va en el nombre desde el principio: la version traducida es
+        # <slug>-en y se reconoce como pareja de un vistazo, en storage/ y en git
+        out = out or os.path.join(STORIES_DIR, f"{tema['slug']}-{lang_code}.json")
         print(f"tema del backlog: {tema['titulo']}")
     if not out:
         parser.error("hace falta --out, o --siguiente para derivarlo del backlog")
