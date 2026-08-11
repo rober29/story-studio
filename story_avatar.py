@@ -31,21 +31,46 @@ NARRADOR = (
 # Nada de "portrait", "bust" ni "front-facing": medido el 2026-08-10, ese
 # vocabulario arrastra al generador a retrato semirrealista y anula el D_STYLE
 # por completo. Los prompts que funcionan describen un dibujo y una acción.
+# A sesenta píxeles no se lee una expresión ni un objeto pequeño: se lee la
+# SILUETA. Por eso cada canal viste al personaje en vez de limitarse a cambiarle
+# el gesto —un salacot y un morrión recortan siluetas muy distintas— y por eso
+# el disfraz se aplica también a la portada: si el avatar lleva casco y la
+# portada no, dejan de parecer el mismo personaje.
+#
+# La pajarita roja se conserva en ambos: es el hilo con el narrador que sale
+# dentro de los reels.
 MARCAS = {
     "es": {
-        "objeto": "holding a rolled parchment scroll",
+        "traje": (
+            "wearing a shiny spanish conquistador morion helmet with a curved crest, "
+            "and a small ruffled white collar over the red bow tie"
+        ),
+        "pose": (
+            "holding a long brass spyglass up to one eye, and that eye is drawn "
+            "comically huge and round through the glass while the other stays a "
+            "small dot, leaning forward towards the viewer"
+        ),
         "fondo": "plain flat warm ochre background",
         "portada": (
-            "a roman column on the far left, an open treasure chest spilling gold "
-            "coins in the middle distance, a sailing ship on the horizon"
+            "a wooden caravel sailing ship with square sails on the horizon, an open "
+            "treasure chest spilling gold coins in the middle distance, a rolled "
+            "nautical map and a compass on the ground"
         ),
     },
     "en": {
-        "objeto": "holding a small magnifying glass",
+        "traje": (
+            "wearing a beige explorer pith helmet and a small canvas satchel strap "
+            "across the chest, over the red bow tie"
+        ),
+        "pose": (
+            "kneeling and holding up a freshly dug gold coin with one hand while the "
+            "other holds a small brush, looking at the coin with wide eyes"
+        ),
         "fondo": "plain flat dusty teal background",
         "portada": (
-            "an egyptian obelisk on the far left, a stack of old books and a spilled "
-            "bag of coins in the middle distance, a castle on the horizon"
+            "an egyptian obelisk half buried in sand on the far left, an open "
+            "excavation pit with pottery shards and a spilled bag of gold coins in "
+            "the middle distance, stone ruins on the horizon"
         ),
     },
 }
@@ -63,10 +88,10 @@ def prompt_avatar(lang):
     """
     marca = MARCAS[lang]
     return (
-        f"big close-up drawing of the head and shoulders of {NARRADOR}. The round "
-        f"white head is LARGE and fills most of the square, centered, with the red "
-        f"bow tie visible below it and one hand waving beside the head. Flat "
-        f"{marca['fondo']}. Nothing important near the corners. {SIN_TEXTO}"
+        f"big close-up drawing of the head and shoulders of {NARRADOR}, "
+        f"{marca['traje']}, {marca['pose']}. The round white head is LARGE and "
+        f"fills most of the square, centered. Flat {marca['fondo']}. Nothing "
+        f"important near the corners. {SIN_TEXTO}"
     )
 
 
@@ -79,10 +104,10 @@ def prompt_portada(lang):
     """
     marca = MARCAS[lang]
     return (
-        f"wide horizontal banner. {NARRADOR}, standing on the RIGHT THIRD of the "
-        f"image, {marca['objeto']}, gesturing towards the left. {marca['portada']}. "
-        f"The LEFT THIRD is empty {marca['fondo']} with nothing important in it. "
-        f"{SIN_TEXTO}"
+        f"wide horizontal banner. {NARRADOR}, {marca['traje']}, standing full body "
+        f"on the RIGHT THIRD of the image and gesturing towards the left. "
+        f"{marca['portada']}. The LEFT THIRD is empty {marca['fondo']} with nothing "
+        f"important in it. {SIN_TEXTO}"
     )
 
 
