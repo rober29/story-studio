@@ -56,6 +56,10 @@ MARCAS = {
             "treasure chest spilling gold coins in the middle distance, a rolled "
             "nautical map and a compass on the ground"
         ),
+        "objetos_banner": (
+            "a small wooden caravel ship, an open chest of gold coins, a rolled "
+            "nautical map and a compass"
+        ),
     },
     "en": {
         "traje": (
@@ -71,6 +75,10 @@ MARCAS = {
             "an egyptian obelisk half buried in sand on the far left, an open "
             "excavation pit with pottery shards and a spilled bag of gold coins in "
             "the middle distance, stone ruins on the horizon"
+        ),
+        "objetos_banner": (
+            "a small egyptian obelisk, a broken clay amphora, a spilled bag of gold "
+            "coins and a stack of old books"
         ),
     },
 }
@@ -111,6 +119,29 @@ def prompt_portada(lang):
     )
 
 
+def prompt_banner(lang):
+    """Banner de canal de YouTube, que recorta mucho más que Facebook.
+
+    YouTube sube 2560x1440 pero la ZONA SEGURA —lo único que se ve en móvil y en
+    televisión— es una franja central de 1546x423, o sea el 60 % del ancho y el
+    29 % del alto. Todo lo que importe tiene que caber ahí; el resto es sangrado
+    que se pierde en la mayoría de pantallas.
+
+    Por eso el personaje va CENTRADO y no a un lado como en la portada de
+    Facebook, donde el problema opuesto era dejar sitio a la foto de perfil.
+    """
+    marca = MARCAS[lang]
+    return (
+        f"wide horizontal banner, {marca['fondo']}. All the drawing is confined to "
+        f"a NARROW HORIZONTAL BAND across the exact middle of the image: "
+        f"{NARRADOR}, {marca['traje']}, standing in the CENTER, with {marca['objetos_banner']} "
+        f"arranged close beside it on the left and on the right, all at the same "
+        f"height. The top third and the bottom third are completely empty flat "
+        f"background. Wide empty margins on the far left and far right edges. "
+        f"{SIN_TEXTO}"
+    )
+
+
 def generar(provider, prompt, ancho, alto, seed, destino, refs=()):
     datos, meta = provider.fetch(prompt, D_STYLE, ancho, alto, seed, refs=refs)
     with open(destino + ".part", "wb") as f:
@@ -127,8 +158,8 @@ def main():
     parser.add_argument("--quality", default="draft", choices=("draft", "final"),
                         help="draft usa el generador gratuito; final, Gemini")
     parser.add_argument("--count", type=int, default=1, help="variantes a generar")
-    parser.add_argument("--solo", choices=("avatar", "portada"),
-                        help="genera solo una de las dos")
+    parser.add_argument("--solo", choices=("avatar", "portada", "banner"),
+                        help="genera solo una pieza; por defecto avatar y portada")
     parser.add_argument("--out", default="storage/brand")
     args = parser.parse_args()
 
@@ -141,8 +172,11 @@ def main():
         provider = providers.PollinationsImages()
 
     os.makedirs(args.out, exist_ok=True)
-    quiere_avatar = args.solo in (None, "avatar")
-    quiere_portada = args.solo in (None, "portada")
+    # el banner es opt-in: sin él, un --lang es sin más regeneraría (y pisaría)
+    # las piezas que ya estén aprobadas y subidas
+    quiere = {args.solo} if args.solo else {"avatar", "portada"}
+    quiere_avatar = "avatar" in quiere
+    quiere_portada = "portada" in quiere
 
     total = 0.0
     for i in range(args.count):
@@ -157,22 +191,30 @@ def main():
             )
             total += meta.get("cost_usd", 0.0)
 
-        if quiere_portada:
-            # la portada hereda el personaje del avatar en vez de redescribirlo
-            refs = ()
-            if avatar_bytes and provider.uses_refs:
-                refs = ((avatar_bytes, "image/jpeg"),)
-            elif provider.uses_refs and os.path.isfile(avatar_path):
+        # portada y banner heredan el personaje del avatar en vez de
+        # redescribirlo: así es el mismo monigote y no uno parecido
+        anchas = [
+            ("portada", prompt_portada, "portada" in quiere),
+            ("banner", prompt_banner, "banner" in quiere),
+        ]
+        refs = ()
+        if any(pedida for _, _, pedida in anchas) and provider.uses_refs:
+            if avatar_bytes is None and os.path.isfile(avatar_path):
                 with open(avatar_path, "rb") as f:
-                    refs = ((f.read(), "image/jpeg"),)
-            if provider.uses_refs and not refs:
+                    avatar_bytes = f.read()
+            if avatar_bytes is None:
                 raise StudioError(
-                    f"falta {avatar_path} para usarlo de referencia en la portada.\n"
-                    f"  Genera antes el avatar, o usa --solo avatar"
+                    f"falta {avatar_path} para usarlo de referencia.\n"
+                    f"  Genera antes el avatar con --solo avatar"
                 )
+            refs = ((avatar_bytes, "image/jpeg"),)
+
+        for nombre, constructor, pedida in anchas:
+            if not pedida:
+                continue
             _, meta = generar(
-                provider, prompt_portada(args.lang), 1920, 1080, seed,
-                os.path.join(args.out, f"portada-{args.lang}{sufijo}.jpg"), refs=refs
+                provider, constructor(args.lang), 1920, 1080, seed,
+                os.path.join(args.out, f"{nombre}-{args.lang}{sufijo}.jpg"), refs=refs
             )
             total += meta.get("cost_usd", 0.0)
 
