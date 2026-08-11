@@ -16,12 +16,23 @@ from studio.errors import StudioError
 PACE = {
     # 7 reels medidos: 2,153 / 2,201 / 2,246 / 2,477 / 2,480 / 2,482 / 2,483
     "es": {"slow": 2.15, "median": 2.477, "fast": 2.50, "samples": 7},
-    # Medido sobre odd-history-3: 175 palabras en 59,33 s = 2,950 palabras/s.
-    # El inglés narra ~19 % más rápido que el español, así que una traducción
-    # literal dura MENOS que el original y se cae del mínimo de TikTok: hacen
-    # falta más palabras, no las mismas. 'fast' lleva margen sobre lo medido
-    # porque con una sola muestra no se conoce la dispersión.
-    "en": {"slow": 2.55, "median": 2.95, "fast": 3.05, "samples": 1},
+    # Dos muestras, y discrepan MUCHO más que las siete españolas:
+    #   odd-history-3        175 palabras / 59,33 s = 2,950
+    #   mansa-musa-mali-en   212 palabras / 86,09 s = 2,463
+    #
+    # Un 20 % de diferencia con la misma voz y la misma velocidad. La lección es
+    # que palabras/s no es una constante del idioma: depende del TEXTO. El
+    # segundo guion lleva 'pilgrimage', 'destabilized', 'catastrophic',
+    # 'inexhaustible' —palabras largas que tardan más aunque cuenten como una— y
+    # más comas, que son pausas.
+    #
+    # Consecuencia práctica: como target_words apunta a 'fast' para garantizar
+    # el suelo, un guion inglés de palabra larga sale LARGO (86 s pidiendo 68).
+    # Se acepta a propósito: pasarse cuesta retención, quedarse corto cuesta la
+    # monetización entera. Pero conviene saber que el inglés no es predecible
+    # como el español, y medir con story_pace.py --probe antes de dar por buena
+    # una duración.
+    "en": {"slow": 2.40, "median": 2.71, "fast": 3.05, "samples": 2},
 }
 
 # Voz por defecto de cada idioma, manteniendo el género para que una serie

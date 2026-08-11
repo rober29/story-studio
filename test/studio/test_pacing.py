@@ -20,10 +20,13 @@ MEDIDOS = [
     ("yamaguchi", 125, 50.35),
 ]
 
-# El único reel en inglés medido hasta ahora. 2,950 palabras/s: el inglés narra
-# ~19 % más rápido que el español, que es la razón de que una traducción literal
-# se quede corta y pierda la monetización de TikTok.
-MEDIDOS_EN = [("odd-history-3", 175, 59.33)]
+# Los reels en inglés medidos. Ojo a la dispersión: 2,950 contra 2,463 con la
+# misma voz. Palabras/s no es una constante del idioma, depende de lo largas que
+# sean las palabras del guion y de cuántas pausas lleve.
+MEDIDOS_EN = [
+    ("odd-history-3", 175, 59.33),
+    ("mansa-musa-mali-en", 212, 86.09),
+]
 
 
 class TestConstantsMatchMeasurements(unittest.TestCase):
