@@ -23,7 +23,7 @@ from studio import ffmpeg, metadata
 from studio.cache import write_atomic
 from studio.errors import StudioError
 from studio.pipeline import story_paths
-from studio.story import load_story
+from studio.story import find_video, load_story
 
 PUBLISH_DIR = os.path.join(ROOT, "storage", "publish")
 LEDGER = os.path.join(PUBLISH_DIR, "uploaded.jsonl")
@@ -96,7 +96,7 @@ def package(story, meta, task_dir, assume_yes=False):
             "existe para evitar. Revisa el informe o usa --yes si lo asumes"
         )
 
-    video = os.path.join(task_dir, "final-1.mp4")
+    video = find_video(task_dir, story)
     if not os.path.isfile(video):
         raise StudioError(f"no existe {video}; genera el reel primero")
 

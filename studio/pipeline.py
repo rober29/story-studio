@@ -26,7 +26,7 @@ from studio.cache import (
     write_json,
 )
 from studio.errors import StudioError
-from studio.story import part_label, scene_word_counts, script_text
+from studio.story import part_label, scene_word_counts, script_text, video_path
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 VIDEO_W, VIDEO_H = draw.VIDEO_W, draw.VIDEO_H
@@ -1003,7 +1003,7 @@ def phase_render(story, force=False, quality="draft", budget=None, assume_yes=Fa
             combined, pattern, os.path.join(task_dir, "video_subs.mp4")
         )
 
-    final = os.path.join(task_dir, "final-1.mp4")
+    final = video_path(task_dir, story)
     _mux_audio(with_subs, voice_path, _pick_bgm(story), story["bgm_volume"], final)
     print(f"\n=== VIDEO GENERADO ===\n{final}")
     return final

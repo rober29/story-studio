@@ -287,6 +287,36 @@ def resolve_prompts(story, source="<story>"):
     return story
 
 
+# Nombre heredado, de cuando cada historia vivía en su propio directorio y no
+# hacía falta distinguirlas por archivo.
+LEGACY_VIDEO = "final-1.mp4"
+
+
+def video_path(task_dir, story):
+    """Ruta donde ESCRIBIR el MP4 final.
+
+    Lleva el id de la historia, que desde la convención de sufijos ya incluye el
+    idioma. Importa al descargarlo al móvil para publicar: 'mansa-musa-es.mp4' y
+    'mansa-musa-en.mp4' se distinguen de un vistazo en la carpeta de descargas,
+    y dos 'final-1.mp4' no.
+    """
+    return os.path.join(task_dir, f"{story['id']}.mp4")
+
+
+def find_video(task_dir, story):
+    """Ruta desde donde LEER el MP4, aceptando el nombre antiguo.
+
+    Los reels renderizados antes de este cambio siguen en disco como
+    final-1.mp4; verify y la publicación tienen que encontrarlos igual, o un
+    cambio de nombre obligaría a volver a renderizar (y a pagar) lo ya hecho.
+    """
+    nuevo = video_path(task_dir, story)
+    if os.path.isfile(nuevo):
+        return nuevo
+    viejo = os.path.join(task_dir, LEGACY_VIDEO)
+    return viejo if os.path.isfile(viejo) else nuevo
+
+
 def script_text(story):
     """Guion completo tal y como se envía al TTS."""
     return " ".join(scene["text"].strip() for scene in story["scenes"])

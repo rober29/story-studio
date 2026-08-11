@@ -15,7 +15,7 @@ from studio import ffmpeg, timing
 from studio.cache import read_json, write_json
 from studio.errors import StudioError
 from studio.pipeline import load_audio, open_manifest, story_paths
-from studio.story import scene_word_counts
+from studio.story import find_video, scene_word_counts
 
 SAMPLE_FPS = 2
 # suficientemente grande para que el texto fino sobreviva al reescalado: a
@@ -96,7 +96,7 @@ def _band_stats(path, band, control):
 
 def verify_story(story):
     task_dir, _ = story_paths(story)
-    video = os.path.join(task_dir, "final-1.mp4")
+    video = find_video(task_dir, story)
     if not os.path.isfile(video):
         raise StudioError(f"no existe {video}; ejecuta el pipeline completo primero")
 

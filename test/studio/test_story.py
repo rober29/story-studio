@@ -6,6 +6,7 @@ import unittest
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 
+from studio import story
 from studio.errors import StudioError
 from studio.story import load_story, scene_word_counts, script_text, validate_story
 
@@ -148,6 +149,45 @@ class TestHelpers(unittest.TestCase):
 
     def test_word_counts(self):
         self.assertEqual(scene_word_counts(validate_story(minimal())), [4, 4])
+
+
+class TestNombreDelVideo(unittest.TestCase):
+    """El MP4 lleva el id, que ya incluye el idioma en las historias nuevas."""
+
+    def setUp(self):
+        import shutil
+        import tempfile
+
+        self.dir = tempfile.mkdtemp()
+        self.addCleanup(shutil.rmtree, self.dir, True)
+        self.story = {"id": "mansa-musa-es"}
+
+    def toca(self, nombre):
+        ruta = os.path.join(self.dir, nombre)
+        open(ruta, "wb").close()
+        return ruta
+
+    def test_escribe_con_el_id(self):
+        ruta = story.video_path(self.dir, self.story)
+        self.assertTrue(ruta.endswith("mansa-musa-es.mp4"))
+
+    def test_encuentra_el_nombre_nuevo(self):
+        self.toca("mansa-musa-es.mp4")
+        self.assertTrue(story.find_video(self.dir, self.story).endswith("mansa-musa-es.mp4"))
+
+    def test_encuentra_el_nombre_antiguo(self):
+        # los reels ya renderizados no deben obligar a volver a pagarlos
+        self.toca(story.LEGACY_VIDEO)
+        self.assertTrue(story.find_video(self.dir, self.story).endswith(story.LEGACY_VIDEO))
+
+    def test_el_nuevo_gana_si_estan_los_dos(self):
+        self.toca(story.LEGACY_VIDEO)
+        self.toca("mansa-musa-es.mp4")
+        self.assertTrue(story.find_video(self.dir, self.story).endswith("mansa-musa-es.mp4"))
+
+    def test_sin_ninguno_devuelve_el_nuevo(self):
+        # para que el mensaje de error nombre el archivo que se espera crear
+        self.assertTrue(story.find_video(self.dir, self.story).endswith("mansa-musa-es.mp4"))
 
 
 if __name__ == "__main__":
