@@ -78,6 +78,12 @@ FORMAT_HINTS = {
         "'3d render', 'cinematic' ni 'detailed portrait': esas palabras sacan al "
         "personaje del estilo del canal, y el estilo global no basta para "
         "frenarlas.\n"
+        "Dentro de los 'prompt', los personajes SECUNDARIOS —los que no están en "
+        "'characters'— también se describen como 'cartoon character', NUNCA como "
+        "'stick figure'. Medido: bastaba con que un prompt dijera 'a terrified "
+        "stick figure sailor' para que ese secundario saliera con cabeza blanca "
+        "de monigote junto a un protagonista con tono de piel. Dos estilos en el "
+        "mismo fotograma es peor que cualquiera de los dos.\n"
         "Tono divulgativo con humor seco."
     ),
 }
