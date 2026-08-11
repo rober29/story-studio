@@ -71,11 +71,13 @@ FORMAT_HINTS = {
         "Usa un personaje recurrente definido en 'characters' y refiérelo con "
         "{nombre} en todas las escenas donde aparezca.\n"
         "CADA descripción de personaje TIENE que empezar literalmente por "
-        "'a stick figure with a round white head and dot eyes,' y seguir solo "
-        "con ropa y objetos CON COLOR. Nada de edad, piel, pelo, complexión ni "
-        "'regal posture': eso arrastra al generador a dibujo semirrealista y el "
-        "reel deja de parecerse a los demás del canal, aunque el estilo global "
-        "diga monigotes.\n"
+        "'a cartoon character with a round head and dot eyes,' y seguir con "
+        "rasgos y ropa CON COLOR. Puedes describir rasgos físicos —son los que "
+        "hacen reconocible al personaje, y en una figura histórica concreta "
+        "además son lo correcto—, pero NUNCA uses 'photorealistic', 'realistic', "
+        "'3d render', 'cinematic' ni 'detailed portrait': esas palabras sacan al "
+        "personaje del estilo del canal, y el estilo global no basta para "
+        "frenarlas.\n"
         "Tono divulgativo con humor seco."
     ),
 }

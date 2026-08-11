@@ -17,12 +17,21 @@ FORMATS = ("A", "B", "C", "D")
 # banner de serie y cortes cada ~2,4 s. El estilo por defecto tiene que ser el
 # contrario del cinematográfico general, o una historia D sin 'style' saldría
 # fotorrealista sin que nada avise.
+#
+# Cambiado el 2026-08-11 de monigotes crudos a caricatura ilustrada. El reel de
+# Mansa Musa salió así por accidente —la descripción del personaje pesó más que
+# el estilo, que decía 'no shading'— y el resultado gustó más: mismo coste, más
+# rico. Se elige a propósito y se deja de pelear consigo mismo.
+#
+# OJO: 'style' entra en image_key. Tocar esta constante invalida la caché de
+# TODAS las historias en formato D, así que volver a renderizar una ya publicada
+# costaría sus imágenes otra vez. Los reels ya hechos no se tocan.
 D_STYLE = (
-    "crude hand-drawn meme cartoon, simple stick figure people with round heads, "
-    "dot eyes and single-line mouths, thick uneven black marker outlines, "
-    "exaggerated comic expressions, flat hand-painted gouache background with "
-    "visible brush strokes, muted earthy palette, off-white paper texture, "
-    "no gradients, no shading, no 3d, no photorealism"
+    "hand-drawn cartoon illustration, simple rounded characters with round heads, "
+    "dot eyes and expressive simple mouths, clean black ink outlines of varying "
+    "weight, soft flat shading, hand-painted gouache backgrounds with visible "
+    "brush strokes, warm earthy palette, off-white paper texture, "
+    "no 3d render, no photorealism"
 )
 
 FORMAT_STYLE = {"D": D_STYLE}
