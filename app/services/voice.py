@@ -21,9 +21,12 @@ from edge_tts import SubMaker
 try:
     from edge_tts.submaker import mktimestamp
 except ImportError:
-    # Fallback for newer edge_tts versions
-    def mktimestamp(offset):
-        return str(offset)
+    # Fallback for newer edge_tts versions (offset is in 100-nanosecond ticks)
+    def mktimestamp(time_unit: float) -> str:
+        hour = int(time_unit / 10**7 / 3600)
+        minute = int(time_unit / 10**7 / 60 % 60)
+        seconds = time_unit / 10**7 % 60
+        return f"{hour:02d}:{minute:02d}:{seconds:06.3f}"
 from loguru import logger
 from moviepy.video.tools import subtitles
 
@@ -1202,7 +1205,9 @@ def azure_tts_v1(
             logger.info(f"start, voice name: {voice_name}, try: {i + 1}")
 
             async def _do() -> SubMaker:
-                communicate = edge_tts.Communicate(text, voice_name, rate=rate_str)
+                communicate = edge_tts.Communicate(
+                    text, voice_name, rate=rate_str, boundary="WordBoundary"
+                )
                 sub_maker = ensure_submaker_compatibility(edge_tts.SubMaker())
                 with open(voice_file, "wb") as file:
                     async for chunk in communicate.stream():
