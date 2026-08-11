@@ -32,6 +32,18 @@
    "motivo": ""
   },
   {
+   "slug": "mansa-musa-mali",
+   "titulo": "Mansa Musa de Malí",
+   "categoria": "personaje-historico",
+   "epoca": "África medieval",
+   "gancho": "Regaló tanto oro durante su peregrinación a La Meca que provocó una inflación devastadora que arruinó la economía egipcia por una década.",
+   "estado": "pendiente",
+   "modo": null,
+   "historias": [],
+   "fecha": null,
+   "motivo": "consecuencia-economica"
+  },
+  {
    "slug": "engano-prometeo-mecona",
    "titulo": "El engaño de Prometeo en Mecona",
    "categoria": "evento-mitologico",
@@ -66,18 +78,6 @@
    "historias": [],
    "fecha": null,
    "motivo": "inmortalidad"
-  },
-  {
-   "slug": "mansa-musa-mali",
-   "titulo": "Mansa Musa de Malí",
-   "categoria": "personaje-historico",
-   "epoca": "África medieval",
-   "gancho": "Regaló tanto oro durante su peregrinación a La Meca que provocó una inflación devastadora que arruinó la economía egipcia por una década.",
-   "estado": "pendiente",
-   "modo": null,
-   "historias": [],
-   "fecha": null,
-   "motivo": "consecuencia-economica"
   },
   {
    "slug": "enrique-viii-inglaterra",
