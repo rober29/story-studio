@@ -1,0 +1,38 @@
+{
+  "id": "odd-history-3",
+  "series": "hidden-history",
+  "images_from": "cosas-raras-3",
+  "voice_rate": 0.9,
+  "target_shot": 2.0,
+  "title": "The Emperor Who Made His Horse a Consul",
+  "scenes": [
+    {
+      "text": "In the year thirty-seven, Rome crowned an emperor who was only twenty-four years old, and at first absolutely everybody adored him.",
+      "prompt": "stick figure roman emperor with laurel crown waving from a balcony while a crowd of tiny stick figures cheers below, painted roman city background"
+    },
+    {
+      "text": "Caligula cut taxes, freed political prisoners, and threw public games that ran for entire weeks without stopping.",
+      "prompt": "stick figure emperor throwing coins to a happy crowd in a roman forum, confetti and banners, painted background"
+    },
+    {
+      "text": "For six straight months he was the most beloved man in the empire. Then he fell gravely ill.",
+      "prompt": "stick figure emperor lying pale in a bed surrounded by worried stick figure doctors, dark candlelit roman bedroom"
+    },
+    {
+      "text": "When he recovered, everyone who knew him swore that he had come back as a completely different person.",
+      "prompt": "stick figure emperor pointing angrily at the sea while confused stick figure soldiers stab the waves with spears, painted beach"
+    },
+    {
+      "text": "He demanded to be worshipped as a god, replaced the heads on statues with his own, and declared war on the sea itself.",
+      "prompt": "stick figure soldiers marching in formation carrying seashells on cushions, roman road with painted hills behind"
+    },
+    {
+      "text": "His troops obeyed. They collected seashells from the beach as spoils of war and paraded them all the way back to Rome.",
+      "prompt": "a horse standing inside a luxurious marble stable with ivory furniture and a golden feeding bowl, stick figure servants bowing"
+    },
+    {
+      "text": "But his most famous idea was Incitatus, his favourite horse, who lived in a marble stable with ivory furniture and his own servants. The chronicles say the animal was on his way to becoming a consul of Rome. He never made it. Caligula was murdered by his own guard after four years. The horse outlived him.",
+      "prompt": "a horse sitting at a long banquet table surrounded by stick figure senators raising cups, painted roman dining hall"
+    }
+  ]
+}

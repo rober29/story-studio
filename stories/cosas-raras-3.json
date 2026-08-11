@@ -1,0 +1,39 @@
+{
+  "id": "cosas-raras-3",
+  "series": "historia-oculta",
+  "title": "El emperador que nombró cónsul a su caballo",
+  "scenes": [
+    {
+      "text": "En el año treinta y siete, Roma coronó a un emperador de veinticuatro años llamado Calígula, y al principio todo el mundo estaba encantado con él.",
+      "prompt": "stick figure roman emperor with laurel crown waving from a balcony while a crowd of tiny stick figures cheers below, painted roman city background"
+    },
+    {
+      "text": "Bajó impuestos, liberó presos políticos y organizó juegos que duraban semanas enteras. Duró seis meses siendo el favorito de todos.",
+      "prompt": "stick figure emperor throwing coins to a happy crowd in a roman forum, confetti and banners, painted background"
+    },
+    {
+      "text": "Entonces enfermó gravemente. Cuando se recuperó, quienes lo conocían juraban que había vuelto siendo otra persona completamente distinta.",
+      "prompt": "stick figure emperor lying pale in a bed surrounded by worried stick figure doctors, dark candlelit roman bedroom"
+    },
+    {
+      "text": "Empezó a exigir que lo llamaran dios, mandó quitar cabezas a estatuas de dioses para ponerles la suya, y declaró la guerra al mar.",
+      "prompt": "stick figure emperor pointing angrily at the sea while confused stick figure soldiers stab the waves with spears, painted beach"
+    },
+    {
+      "text": "Sus tropas obedecieron. Recogieron conchas de la playa como botín de guerra y desfilaron con ellas de vuelta a Roma.",
+      "prompt": "stick figure soldiers marching in formation carrying seashells on cushions, roman road with painted hills behind"
+    },
+    {
+      "text": "Pero su idea más recordada fue Incitato, su caballo favorito, que vivía en un establo de mármol con muebles de marfil.",
+      "prompt": "a horse standing inside a luxurious marble stable with ivory furniture and a golden feeding bowl, stick figure servants bowing"
+    },
+    {
+      "text": "El caballo tenía criados propios, invitaba a cenas y, según cuentan las crónicas, iba camino de ser nombrado cónsul de Roma.",
+      "prompt": "a horse sitting at a long banquet table surrounded by stick figure senators raising cups, painted roman dining hall"
+    },
+    {
+      "text": "Nunca llegó a serlo. Calígula fue asesinado antes por su propia guardia, tras cuatro años de reinado. El caballo le sobrevivió.",
+      "prompt": "a horse standing alone in an empty roman throne room looking at a toppled crown on the floor, dusty light beams"
+    }
+  ]
+}

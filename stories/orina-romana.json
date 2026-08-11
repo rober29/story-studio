@@ -1,0 +1,44 @@
+{
+  "id": "orina-romana",
+  "format": "A",
+  "title": "Los romanos y el enjuague bucal",
+  "banner": "Cosas Raras de la Historia",
+  "part": "Pt. 2",
+  "voice": "es-MX-DaliaNeural",
+  "style": "simple stick figure cartoon, thick black outlines, flat warm colors, funny comic style, minimal roman background",
+  "watermark": "@cosas.raras",
+  "scenes": [
+    {
+      "text": "En la antigua Roma existía un impuesto sobre la orina. Y no era una broma.",
+      "prompt": "stick figure roman emperor sitting on a throne holding a coin bag, laurel wreath, confused citizen nearby"
+    },
+    {
+      "text": "Resulta que la orina vieja se descompone y produce amoniaco.",
+      "prompt": "stick figure scientist pointing at a clay pot with green stink lines coming out of it"
+    },
+    {
+      "text": "El amoniaco limpia como pocas cosas. Así que las lavanderías la compraban por litros.",
+      "prompt": "stick figure workers stomping clothes inside stone basins in a roman laundry, steam and bubbles"
+    },
+    {
+      "text": "Había ánforas en las esquinas para que la gente donara al pasar.",
+      "prompt": "large clay amphora on a roman street corner, stick figure man approaching it whistling casually"
+    },
+    {
+      "text": "Pero los romanos fueron un paso más allá. Bastante más allá.",
+      "prompt": "stick figure narrator raising one finger dramatically, roman columns behind, suspense"
+    },
+    {
+      "text": "También la usaban como enjuague bucal, convencidos de que blanqueaba los dientes.",
+      "prompt": "stick figure roman man gargling from a small cup with a horrified expression, sparkling white teeth"
+    },
+    {
+      "text": "Y lo peor es que funcionaba. El amoniaco blanquea de verdad.",
+      "prompt": "stick figure with an exaggerated sparkling white smile, tiny shine stars around the teeth"
+    },
+    {
+      "text": "Cuando su hijo se quejó del impuesto, el emperador le puso una moneda en la nariz y le preguntó si olía mal.",
+      "prompt": "stick figure emperor holding a coin up to the nose of a disgusted younger stick figure, throne room"
+    }
+  ]
+}

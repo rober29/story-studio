@@ -1,0 +1,46 @@
+{
+  "id": "faros",
+  "format": "C",
+  "title": "¿Por qué ya no hay fareros?",
+  "style": "cinematic documentary style, 35mm film photograph, dramatic moody lighting, rich maritime color palette with deep blues and warm amber glow, highly detailed, photorealistic render",
+  "characters": {
+    "keeper": "An elderly lighthouse keeper in his late 60s, with a thick white beard, weathered skin, wearing a dark navy wool sweater and a classic dark rain captain hat."
+  },
+  "scenes": [
+    {
+      "chapter": "🌊 El misterio de la torre",
+      "text": "¿Sabías que los legendarios faros de todo el mundo ya no tienen ningún farero viviendo dentro?",
+      "prompt": "A towering lone lighthouse standing on a rocky cliff surrounded by violent ocean waves under a dark cloudy sky, atmospheric vertical shot"
+    },
+    {
+      "chapter": "🔥 La era del fuego",
+      "text": "Durante siglos, guardianes solitarios mantuvieron vivas las llamas para guiar a los barcos en la oscuridad.",
+      "prompt": "An old man {keeper} lighting an oil lamp inside a warm glass lantern room of a lighthouse at twilight"
+    },
+    {
+      "chapter": "🔥 La era del fuego",
+      "text": "Enfrentaban meses de aislamiento total y tempestades feroces mientras limpiaban a mano los grandes cristales.",
+      "prompt": "{keeper} carefully wiping a massive Fresnel lens inside a lighthouse glass chamber during a raging storm outside"
+    },
+    {
+      "chapter": "⚡ La revolución eléctrica",
+      "text": "Sin embargo, a mediados del siglo veinte, la electricidad y la automatización cambiaron las reglas.",
+      "prompt": "Interior of a vintage twentieth-century lighthouse room with electric wires, industrial control panels, and glowing vacuum tubes"
+    },
+    {
+      "chapter": "⚡ La revolución eléctrica",
+      "text": "Lámparas halógenas y sensores de luz permitieron que los faros se encendieran sin ayuda humana.",
+      "prompt": "Close-up of a modern automated rotating glass prism mechanism glowing with bright yellow light without any human around"
+    },
+    {
+      "chapter": "🛰️ La señal del espacio",
+      "text": "Más tarde, los sistemas de posicionamiento por satélite transformaron la navegación marítima de manera definitiva.",
+      "prompt": "High angle view of a cargo ship navigating deep dark ocean waters at night under a starry sky, subtle glowing digital GPS trajectory overlaid"
+    },
+    {
+      "chapter": "🏛️ Guardianes de piedra",
+      "text": "Hoy estas hermosas torres brillan solas de forma remota, siendo recuerdos automáticos del vasto océano.",
+      "prompt": "A majestic modern lighthouse on a serene coast at golden hour sunset, beam of light turning on automatically"
+    }
+  ]
+}

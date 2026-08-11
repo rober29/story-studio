@@ -1,0 +1,39 @@
+{
+  "id": "plaga-baile",
+  "format": "A",
+  "title": "La plaga del baile de 1518",
+  "banner": "Curiosidades de la Historia",
+  "part": "Pt. 1",
+  "voice": "es-MX-DaliaNeural",
+  "style": "simple stick figure cartoon, thick black outlines, flat pastel colors, funny comic style, minimal medieval background",
+  "scenes": [
+    {
+      "text": "Estrasburgo, mil quinientos dieciocho. Una mujer llamada Frau Troffea salió a la calle y empezó a bailar.",
+      "prompt": "stick figure woman dancing alone in medieval town street, confused neighbors watching from windows"
+    },
+    {
+      "text": "No paró en toda la noche. Ni al día siguiente. Ni al siguiente.",
+      "prompt": "exhausted stick figure woman still dancing under moon and then under sun, sweat drops"
+    },
+    {
+      "text": "Una semana después, más de treinta personas bailaban con ella sin poder detenerse.",
+      "prompt": "crowd of stick figures dancing frantically in medieval town square, chaos"
+    },
+    {
+      "text": "Las autoridades pensaron que la cura era más baile, así que contrataron músicos.",
+      "prompt": "medieval stick figure officials hiring musicians with drums and pipes on wooden stage"
+    },
+    {
+      "text": "Fue un desastre. El baile se extendió a más de cuatrocientas personas.",
+      "prompt": "huge crowd of stick figures dancing wildly, official stick figure facepalming"
+    },
+    {
+      "text": "Muchos bailaron hasta desmayarse. Algunos, según las crónicas, hasta morir.",
+      "prompt": "stick figures collapsed on ground exhausted, one dancing with dizzy stars around head"
+    },
+    {
+      "text": "Hasta hoy, nadie sabe con certeza qué causó la plaga del baile de mil quinientos dieciocho.",
+      "prompt": "stick figure scratching head next to giant question mark, medieval town background"
+    }
+  ]
+}

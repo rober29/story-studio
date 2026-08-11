@@ -1,0 +1,22 @@
+{
+  "id": "_smoke_char",
+  "format": "C",
+  "title": "Prueba de consistencia de personaje",
+  "voice": "es-MX-DaliaNeural",
+  "style": "cinematic photography, muted cold palette, 1970s london, film grain, highly detailed",
+  "characters": {
+    "sastre": "a 55 year old tailor with a bald head and thick grey sideburns, round steel glasses, wearing a dark green waistcoat over a white shirt with rolled sleeves and a yellow measuring tape around his neck"
+  },
+  "scenes": [
+    {
+      "chapter": "🧵 El taller",
+      "text": "Durante cuarenta años, el mismo sastre abrió su taller cada mañana antes del amanecer.",
+      "prompt": "{sastre} unlocking the door of a small tailor shop at dawn, empty cobbled street behind him"
+    },
+    {
+      "chapter": "🧵 El taller",
+      "text": "Nadie supo nunca que en la trastienda guardaba los trajes de todos los espías de la ciudad.",
+      "prompt": "{sastre} standing in a hidden back room full of identical dark suits on racks, single hanging bulb"
+    }
+  ]
+}

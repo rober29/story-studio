@@ -1,0 +1,19 @@
+{
+  "id": "_smoke",
+  "format": "C",
+  "title": "Prueba de humo",
+  "voice": "es-MX-DaliaNeural",
+  "style": "cinematic, photorealistic, dramatic lighting, highly detailed",
+  "scenes": [
+    {
+      "chapter": "🌋 Una prueba corta",
+      "text": "Esta es una prueba corta del generador de videos.",
+      "prompt": "a lone volcano erupting at dusk seen from far away, ash cloud"
+    },
+    {
+      "chapter": "✅ Segunda escena",
+      "text": "Si ves esta frase con subtítulos, todo funciona.",
+      "prompt": "calm green valley after the storm at sunrise, soft light"
+    }
+  ]
+}

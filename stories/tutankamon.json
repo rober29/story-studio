@@ -1,0 +1,50 @@
+{
+  "id": "tutankamon",
+  "format": "C",
+  "title": "La tumba que nadie debía encontrar",
+  "voice": "es-ES-AlvaroNeural",
+  "style": "cinematic photography, warm golden light, fine dust in the air, archaeological documentary, highly detailed, dramatic shadows",
+  "watermark": "@historias.increibles",
+  "scenes": [
+    {
+      "chapter": "🏜️ 1922: la última temporada",
+      "text": "En 1922, Howard Carter llevaba 7 años excavando el Valle de los Reyes sin encontrar nada.",
+      "prompt": "british archaeologist in dusty field clothes and hat standing in a rocky desert valley at midday, excavation tools, exhausted"
+    },
+    {
+      "chapter": "🏜️ 1922: la última temporada",
+      "text": "Su mecenas le dio una temporada más. Solo una.",
+      "prompt": "wealthy english lord in linen suit talking seriously with an archaeologist inside a canvas tent, maps on a folding table"
+    },
+    {
+      "chapter": "🪜 El escalón bajo la arena",
+      "text": "El 4 de noviembre, un niño que llevaba agua tropezó con una piedra tallada.",
+      "prompt": "egyptian boy carrying water jars kneeling in sand, uncovering a carved stone step, low afternoon light"
+    },
+    {
+      "chapter": "🪜 El escalón bajo la arena",
+      "text": "Era el primer escalón de una escalera enterrada durante 3.000 años.",
+      "prompt": "ancient stone staircase descending into darkness, half buried in desert sand, workers clearing debris"
+    },
+    {
+      "chapter": "🕯️ ¿Ves algo?",
+      "text": "Carter abrió un pequeño agujero en la puerta sellada y acercó una vela.",
+      "prompt": "archaeologist peering through a small hole in an ancient sealed door holding a candle, darkness beyond, tense moment"
+    },
+    {
+      "chapter": "🕯️ ¿Ves algo?",
+      "text": "Su mecenas le preguntó si veía algo. Carter respondió: sí, cosas maravillosas.",
+      "prompt": "candlelight revealing a chamber packed with golden treasures, chariots, statues and chests, dust floating in the beam"
+    },
+    {
+      "chapter": "👑 5.398 objetos",
+      "text": "Dentro había 5.398 objetos y el único sarcófago real que los saqueadores nunca encontraron.",
+      "prompt": "golden pharaoh burial mask resting inside an ornate sarcophagus, museum lighting, intricate blue and gold detail"
+    },
+    {
+      "chapter": "👑 5.398 objetos",
+      "text": "Tardaron 10 años en vaciarla. Tutankamón había reinado apenas 9, y murió con 19.",
+      "prompt": "archaeologists carefully cataloguing hundreds of ancient artifacts in a lamplit tomb chamber, wooden crates, notebooks"
+    }
+  ]
+}

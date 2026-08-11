@@ -1,0 +1,50 @@
+{
+  "id": "tenochtitlan",
+  "format": "C",
+  "title": "La caída de Tenochtitlan",
+  "voice": "es-MX-DaliaNeural",
+  "style": "cinematic, photorealistic, epic lighting, highly detailed, historical documentary style, dramatic atmosphere",
+  "watermark": "@historias.increibles",
+  "scenes": [
+    {
+      "chapter": "🏛️ Tenochtitlan: la joya del imperio",
+      "text": "Durante casi dos siglos, Tenochtitlan fue una de las ciudades más grandes y avanzadas del mundo.",
+      "prompt": "great aztec city of Tenochtitlan at golden hour, canals, pyramids, causeways over lake Texcoco, bustling markets"
+    },
+    {
+      "chapter": "🏛️ Tenochtitlan: la joya del imperio",
+      "text": "Sus canales, templos y mercados asombraban a cualquier visitante.",
+      "prompt": "aztec grand temple pyramid with colorful banners, crowded market plaza below, canoes on canals"
+    },
+    {
+      "chapter": "⛵ 1519: La llegada de Cortés",
+      "text": "Pero en mil quinientos diecinueve, todo comenzó a cambiar.",
+      "prompt": "spanish galleons arriving at mexican coast at dawn, ominous storm clouds, conquistador ships"
+    },
+    {
+      "chapter": "⛵ 1519: La llegada de Cortés",
+      "text": "Hernán Cortés desembarcó con apenas seiscientos hombres.",
+      "prompt": "hernan cortes conquistador in steel armor standing on beach with soldiers and horses, banners"
+    },
+    {
+      "chapter": "⚔️ Alianzas y epidemias",
+      "text": "Miles de guerreros de pueblos sometidos por los mexicas se unieron a su avance.",
+      "prompt": "tlaxcalan warriors alliance marching with spanish soldiers through mexican highlands, obsidian weapons, feathers"
+    },
+    {
+      "chapter": "⚔️ Alianzas y epidemias",
+      "text": "Luego llegó un enemigo invisible: la viruela devastó a la población.",
+      "prompt": "dark interior of aztec house, sick people lying on mats, smoke and shadows, somber mood"
+    },
+    {
+      "chapter": "🔥 1521: El sitio final",
+      "text": "En mil quinientos veintiuno, tras un sitio de noventa días, la ciudad cayó.",
+      "prompt": "epic battle on causeways of Tenochtitlan, burning temples, smoke over lake, warriors fighting"
+    },
+    {
+      "chapter": "🔥 1521: El sitio final",
+      "text": "Sobre sus ruinas nació la Ciudad de México, marcando el fin de un imperio y el comienzo de una nueva era.",
+      "prompt": "colonial mexico city cathedral rising over aztec ruins at sunrise, symbolic transition, birds flying"
+    }
+  ]
+}

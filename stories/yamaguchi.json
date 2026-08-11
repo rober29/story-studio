@@ -1,0 +1,47 @@
+{
+  "id": "yamaguchi",
+  "format": "B",
+  "title": "El hombre más afortunado del mundo",
+  "voice": "es-MX-JorgeNeural",
+  "style": "muted watercolor illustration, soft grain, restrained palette, respectful historical tone, painterly",
+  "min_beat_duration": 1.8,
+  "max_beat_duration": 3.2,
+  "max_images": 45,
+  "characters": {
+    "ingeniero": "a slim japanese man in his late twenties with short black hair, round glasses, wearing a grey 1940s work shirt and dark trousers"
+  },
+  "scenes": [
+    {
+      "text": "Seis de agosto de mil novecientos cuarenta y cinco. Tsutomu Yamaguchi terminaba un viaje de trabajo en Hiroshima.",
+      "prompt": "{ingeniero} walking with a leather briefcase through a japanese city street in summer, morning light, 1940s"
+    },
+    {
+      "text": "Se bajó del tranvía, recordó que había olvidado un sello y volvió sobre sus pasos.",
+      "prompt": "{ingeniero} stepping off a vintage tram and turning back, city street, warm morning"
+    },
+    {
+      "text": "A las ocho y cuarto, el cielo se volvió blanco. Estaba a tres kilómetros del epicentro.",
+      "prompt": "blinding white flash filling the sky over a japanese city skyline, silhouettes, watercolor"
+    },
+    {
+      "text": "Sobrevivió con quemaduras graves y los tímpanos rotos. Pasó la noche en un refugio.",
+      "prompt": "{ingeniero} with bandaged arms sitting against a wall in a crowded improvised shelter, dim lamplight"
+    },
+    {
+      "text": "Al día siguiente hizo lo único que se le ocurrió: tomó un tren de vuelta a casa.",
+      "prompt": "{ingeniero} bandaged, sitting by the window of a crowded steam train, countryside passing outside"
+    },
+    {
+      "text": "Su casa estaba en Nagasaki.",
+      "prompt": "quiet japanese residential neighborhood with wooden houses and hills behind, calm morning, watercolor"
+    },
+    {
+      "text": "El nueve de agosto, mientras le contaba a su jefe lo que había visto, el cielo volvió a ponerse blanco.",
+      "prompt": "{ingeniero} standing in an office explaining to a seated older man, second blinding white flash through the window"
+    },
+    {
+      "text": "Yamaguchi vivió hasta los noventa y tres años. Es la única persona reconocida oficialmente como superviviente de las dos bombas.",
+      "prompt": "elderly japanese man with white hair sitting peacefully in a sunlit garden, cherry blossoms, serene portrait"
+    }
+  ]
+}

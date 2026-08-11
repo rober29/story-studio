@@ -1,0 +1,40 @@
+{
+  "id": "markov",
+  "format": "B",
+  "title": "El paraguas búlgaro",
+  "voice": "es-MX-JorgeNeural",
+  "style": "retro anime style, 1980s cold war thriller aesthetic, muted colors, film grain, detailed illustration",
+  "max_images": 40,
+  "min_beat_duration": 1.8,
+  "max_beat_duration": 3.2,
+  "characters": {
+    "markov": "a 49 year old bulgarian writer with thick dark mustache, receding dark hair, tired brown eyes, wearing a brown tweed coat over a beige sweater and dark red scarf",
+    "stranger": "a tall faceless man in long black trench coat and black fedora hat, face hidden in shadow, carrying a black umbrella"
+  },
+  "scenes": [
+    {
+      "text": "Londres, mil novecientos setenta y ocho. Georgi Markov espera el autobús como cada mañana.",
+      "prompt": "{markov} waiting at a london bus stop, rainy street, red double decker bus in background"
+    },
+    {
+      "text": "De pronto siente un pinchazo en la pierna. Detrás de él, un desconocido recoge un paraguas y se disculpa.",
+      "prompt": "{markov} wincing in pain on crowded london bridge while {stranger} picks up his umbrella behind him, tense moment"
+    },
+    {
+      "text": "Esa noche la fiebre comienza. Los médicos no encuentran ninguna explicación.",
+      "prompt": "{markov} lying sick with fever in dim hospital room, worried doctors examining charts, night scene"
+    },
+    {
+      "text": "Cuatro días después, Markov muere. En la autopsia, los forenses descubren una diminuta esfera de platino llena de ricina.",
+      "prompt": "forensic scientist in white coat examining a tiny platinum pellet under microscope in laboratory, dramatic lighting"
+    },
+    {
+      "text": "El paraguas era en realidad un arma neumática diseñada por servicios secretos.",
+      "prompt": "technical blueprint of modified black umbrella weapon on spy laboratory desk, cold war gadgets, drafting tools"
+    },
+    {
+      "text": "El caso del paraguas búlgaro sigue siendo uno de los asesinatos más audaces de la Guerra Fría.",
+      "prompt": "{stranger} walking away into london fog at dusk, mysterious atmosphere, big ben silhouette in background"
+    }
+  ]
+}

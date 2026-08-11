@@ -1,0 +1,40 @@
+{
+  "id": "essex",
+  "format": "B",
+  "title": "El verdadero Moby Dick: El naufragio del Essex",
+  "voice": "es-MX-JorgeNeural",
+  "style": "cinematic oil painting style, dramatic chiaroscuro lighting, dark moody ocean tones, detailed historical digital artwork, 8k resolution",
+  "characters": {
+    "pollard": "A thirty-year-old nineteenth-century naval captain with short dark brown hair, weathered sun-damaged skin, tired blue eyes, wearing a dark blue captain coat with brass buttons."
+  },
+  "scenes": [
+    {
+      "text": "¿Sabías que Moby Dick existió realmente y su historia fue todavía más aterradora que el libro?",
+      "prompt": "Close-up portrait of {pollard} looking terrified, dark ocean reflection in his eyes, dramatic lighting."
+    },
+    {
+      "text": "En mil ochocientos veinte, el ballenero Essex zarpó al Pacífico en busca de valioso aceite de ballena.",
+      "prompt": "{pollard} standing on the wooden deck of a majestic nineteenth-century whaleship sailing across a calm blue sea."
+    },
+    {
+      "text": "De forma inédita, un gigante cachalote embistió con furia destructiva el casco de madera del navío.",
+      "prompt": "A gigantic ocean sperm whale violently crashing into the side of a wooden whaling ship, explosive sea spray."
+    },
+    {
+      "text": "El barco se hundió en minutos, dejando a veinte marineros a la deriva en pequeños botes.",
+      "prompt": "{pollard} sitting in a small fragile wooden lifeboat watching a massive ship sink below dark ocean waves."
+    },
+    {
+      "text": "Tras semanas a la deriva sin agua, la extrema desesperación los obligó a tomar medidas impensables.",
+      "prompt": "{pollard} sitting exhausted and emaciated inside a wooden lifeboat under a harsh burning sun on endless open sea."
+    },
+    {
+      "text": "Únicamente ocho marineros sobrevivieron tras devorar a sus compañeros muertos para no perecer en alta mar.",
+      "prompt": "A distant merchant ship approaching a tiny wooden rowboat containing weak survivors on a vast silent ocean."
+    },
+    {
+      "text": "Este escalofriante suceso real inspiró al famoso escritor Herman Melville para crear su gran obra maestra.",
+      "prompt": "An old leather-bound vintage book open on a dark wooden table next to an oil lantern and a quill pen."
+    }
+  ]
+}
