@@ -8,6 +8,7 @@ fase interrumpida se retoma sin rehacer lo que ya estaba bien.
 import glob
 import os
 import random
+import re
 
 from studio import draw, ffmpeg, images, pacing, providers, timing
 from studio.cache import (
@@ -218,6 +219,30 @@ NO_TEXT = (
     "writing anywhere in the image."
 )
 
+# Palabras con las que un prompt pide rotulación A PROPÓSITO. Si aparecen, no se
+# impone NO_TEXT: la escotilla existe para la escena rara que necesita un cartel.
+PIDE_ROTULO = re.compile(
+    r"\b(sign|signs|signage|poster|placard|inscription|inscribed|written|"
+    r"lettering|handwriting|newspaper|headline|scoreboard)\b",
+    re.I,
+)
+
+
+def scene_prompt(scene):
+    """Prompt de una imagen de escena, con la prohibición de rotular por defecto.
+
+    Antes no se aplicaba, con el argumento de que el prompt lo escribía una
+    persona y debía poder pedir un cartel. Ese argumento caducó cuando
+    story_writer empezó a escribirlos: medido el 2026-08-11, el generador puso
+    'RUM' y 'SUPPLIES' en unas cajas que nadie había pedido, y en inglés sobre un
+    reel en español. El texto lo pone siempre la capa de subtítulos.
+    """
+    prompt = scene["prompt"]
+    if PIDE_ROTULO.search(prompt):
+        return prompt
+    return f"{prompt}. {NO_TEXT}"
+
+
 SHEET_PROMPT = (
     "character reference sheet of {description}. Full body front view on the "
     "left and head-and-shoulders close-up on the right, plain neutral grey "
@@ -402,12 +427,9 @@ def image_jobs(story, task_dir, provider, quality, beats=None):
                  scene.get("characters_present", []))
             )
     else:
-        # Aquí el prompt lo escribe la persona y describe solo lo que se ve, así
-        # que no se le impone la prohibición de rotular: si alguien pide un
-        # cartel a propósito, debe poder tenerlo.
         for i, scene in enumerate(story["scenes"]):
             raw.append(
-                ("scene-%02d" % i, scene["prompt"], 100 + i,
+                ("scene-%02d" % i, scene_prompt(scene), 100 + i,
                  scene.get("characters_present", []))
             )
 
