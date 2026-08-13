@@ -4,7 +4,7 @@
   "title": "Parte 1: La proclamación imperial",
   "min_duration": 68,
   "characters": {
-    "norton": "a cartoon character with a round head and dot eyes, a large dark beard, wearing a worn blue military jacket with gold epaulets, dark trousers, and a tall hat with a peacock feather"
+    "norton": "A stout forty-year-old man with a bushy dark beard and an upright regal posture, wearing a worn navy blue military jacket with tarnished gold epaulets, dark grey trousers, and a tall beaver hat with a long peacock feather"
   },
   "scenes": [
     {
@@ -13,7 +13,7 @@
     },
     {
       "text": "En el año mil ochocientos cincuenta y nueve, un próspero comerciante de San Francisco llamado Joshua Norton lo perdió absolutamente todo especulando con el arroz.",
-      "prompt": "A Victorian merchant office setting, with {norton} sitting stressed at a cluttered wooden desk at center, sacks of rice stacked high on the left, and dramatic financial charts and ledgers on the right under warm oil lamp lighting."
+      "prompt": "A crowded Victorian merchant office in San Francisco, {norton} slumped at a cluttered central desk with his head in his hands, clerks rushing past carrying ledgers on the left, towers of rice sacks and shouting traders on the right, and tall windows showing a harbour crowded with masts in the background."
     },
     {
       "text": "Tras quedar completamente en la ruina y desaparecer durante varios meses, Norton regresó a la ciudad con la mente bastante transformada y un plan muy estrafalario.",
@@ -21,7 +21,7 @@
     },
     {
       "text": "Entregó una carta oficial al periódico local declarándose formalmente como Norton Primero, Emperador de los Estados Unidos y Protector de la gran nación mexicana.",
-      "prompt": "Inside a busy 1850s newspaper printing office, {norton} in center handing a formal letter to an amazed newspaper editor sitting at a desk on the left, while printing presses operate on the right."
+      "prompt": "Inside a busy 1850s newspaper printing office, {norton} at center handing a formal letter to an amazed editor on the left, rows of typesetters working at their cases on the right, and huge printing presses running while paper boys carry out bundles in the background."
     },
     {
       "text": "En lugar de encerrarlo en un hospital psiquiátrico, los amables ciudadanos de San Francisco decidieron seguirle el divertido juego con un afecto sinceramente genuino.",

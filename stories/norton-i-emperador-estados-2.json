@@ -4,16 +4,16 @@
   "title": "Parte 2: El dinero del emperador",
   "min_duration": 68,
   "characters": {
-    "norton": "a cartoon character with a round head and dot eyes, a large dark beard, wearing a worn blue military jacket with gold epaulets, dark trousers, and a tall hat with a peacock feather"
+    "norton": "A stout forty-year-old man with a bushy dark beard and an upright regal posture, wearing a worn navy blue military jacket with tarnished gold epaulets, dark grey trousers, and a tall beaver hat with a long peacock feather"
   },
   "scenes": [
     {
       "text": "Tras quedarse sin un centavo oficial, el ingenioso emperador Norton decidió solucionar su liquidez emitiendo sus propios billetes de banco impresos en papel por una imprenta.",
-      "prompt": "Inside a dimly lit 1860s print shop, {norton} standing at the center watching a printer work on a hand-operated press on the left, with stacks of freshly printed paper notes drying on tables on the right."
+      "prompt": "Inside a crowded 1860s print shop, {norton} at center overseeing a printer working a hand press on the left, apprentices hanging freshly printed notes to dry on lines across the right, and an open doorway showing a busy street full of carriages in the background."
     },
     {
       "text": "Estos billetes imperiales de cincuenta centavos y diez dólares prometían pagar un interés del siete por ciento a partir del año mil ochocientos ochenta.",
-      "prompt": "An overhead wide shot of a wooden table where {norton} on the left is signing elaborate promissory notes, with ink bottles and gold wax seals placed on the right under soft lamp glow."
+      "prompt": "{norton} at center signing elaborate promissory notes at a wooden desk, a queue of curious citizens waiting their turn on the left, a clerk pressing gold wax seals on the right, and shelves of ledgers rising to the ceiling behind them in the background."
     },
     {
       "text": "Lo más sorprendente fue que los tenderos, taberneros y restauradores de San Francisco comenzaron a aceptar estos billetes ficticios como si fueran dinero real.",
@@ -25,11 +25,11 @@
     },
     {
       "text": "Los comerciantes locales incluso colocaban orgullosos en sus escaparates grandes carteles anunciando que el local contaba con el sello oficial de Su Majestad Imperial.",
-      "prompt": "Exterior of a 19th-century bakery, with {norton} standing proudly on the right looking at a framed imperial seal hanging on the shop front window on the left, as passersby walk on the street."
+      "prompt": "A busy 19th-century bakery street front, {norton} standing proudly on the right beside a framed imperial seal in the window, the baker and a cluster of customers gathered in the doorway on the left, and a crowded street of shopfronts, handcarts and pedestrians stretching into the background."
     },
     {
       "text": "Norton pagaba todos sus desayunos y compras diarias con sus billetes firmados a mano, cobrando también un modesto impuesto imperial que los vecinos abonaban siempre felices.",
-      "prompt": "A cozy cafe interior, where {norton} sits at a central table handing a custom note to a waitress on the right, while a baker behind the left counter smiles warmly."
+      "prompt": "A busy cafe interior, {norton} at a central table handing a custom note to a waitress on the right, other tables full of diners watching and whispering on the left, and a window showing a crowded street with a cable car passing in the background."
     },
     {
       "text": "Todo funcionaba perfectamente en la ciudad hasta que un día, un policía novato cometió el gravísimo error de arrestar al mismísimo emperador bajo el cargo de vagancia.",

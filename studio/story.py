@@ -18,24 +18,31 @@ FORMATS = ("A", "B", "C", "D")
 # contrario del cinematográfico general, o una historia D sin 'style' saldría
 # fotorrealista sin que nada avise.
 #
-# Cambiado el 2026-08-11 de monigotes crudos a caricatura ilustrada. El reel de
-# Mansa Musa salió así por accidente —la descripción del personaje pesó más que
-# el estilo, que decía 'no shading'— y el resultado gustó más: mismo coste, más
-# rico. Se elige a propósito y se deja de pelear consigo mismo.
+# NO REESCRIBAS ESTA CADENA PARA "MEJORARLA". Se intentó el 2026-08-11, cuatro
+# veces y con diez imágenes de prueba, y todas salieron peor.
+#
+# Lee esto antes: parece que se contradice con el resultado. Dice 'stick figure'
+# y 'no shading', y sin embargo el reel de Mansa Musa —el que sirve de
+# referencia— tiene figuras con volumen y tono de piel. Eso NO es un fallo de la
+# cadena: es el mecanismo. El registro que buscamos nace de la TENSIÓN entre este
+# estilo austero y una descripción de personaje rica ("A 40-year-old West African
+# king, dark skin, regal posture, wearing a bright yellow royal robe"). El estilo
+# aporta el fondo pintado y la planitud; el personaje tira hacia lo figurativo; y
+# el punto medio es el que funciona.
+#
+# Describir ese punto medio directamente no lo reproduce: da ilustración
+# vectorial limpia, que es lo que salió las cuatro veces. Si quieres cambiar el
+# look, cambia la descripción del personaje, no esto.
 #
 # OJO: 'style' entra en image_key. Tocar esta constante invalida la caché de
 # TODAS las historias en formato D, así que volver a renderizar una ya publicada
 # costaría sus imágenes otra vez. Los reels ya hechos no se tocan.
 D_STYLE = (
-    "simple hand-drawn doodle cartoon. EVERY character, main or background alike, "
-    "is drawn the same way: a big plain round head with two dot eyes and a tiny "
-    "simple mouth, no nose, no eyebrows; and THIN BLACK STICK ARMS AND LEGS drawn "
-    "as single thin lines, NEVER drawn limbs with sleeves, cuffs, gloves or "
-    "trousers. Clothing is ONE simple flat coloured shape on the torso only. Thin "
-    "sketchy uneven ink outlines. EVERY object is filled with soft colour, "
-    "including animals and props. Desaturated dusty palette. Hand-painted gouache "
-    "background with visible brush strokes and off-white paper texture. No "
-    "gradients, no cel shading, no vector art, no 3d render, no photorealism"
+    "crude hand-drawn meme cartoon, simple stick figure people with round heads, "
+    "dot eyes and single-line mouths, thick uneven black marker outlines, "
+    "exaggerated comic expressions, flat hand-painted gouache background with "
+    "visible brush strokes, muted earthy palette, off-white paper texture, "
+    "no gradients, no shading, no 3d, no photorealism"
 )
 
 FORMAT_STYLE = {"D": D_STYLE}
