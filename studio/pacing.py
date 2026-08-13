@@ -16,9 +16,10 @@ from studio.errors import StudioError
 PACE = {
     # 7 reels medidos: 2,153 / 2,201 / 2,246 / 2,477 / 2,480 / 2,482 / 2,483
     "es": {"slow": 2.15, "median": 2.477, "fast": 2.50, "samples": 7},
-    # Dos muestras, y discrepan MUCHO más que las siete españolas:
+    # Tres muestras, y discrepan MUCHO más que las siete españolas:
     #   odd-history-3        175 palabras / 59,33 s = 2,950
     #   mansa-musa-mali-en   212 palabras / 86,09 s = 2,463
+    #   guerra-asiento-en    214 palabras / 82,94 s = 2,580
     #
     # Un 20 % de diferencia con la misma voz y la misma velocidad. La lección es
     # que palabras/s no es una constante del idioma: depende del TEXTO. El
@@ -32,7 +33,7 @@ PACE = {
     # monetización entera. Pero conviene saber que el inglés no es predecible
     # como el español, y medir con story_pace.py --probe antes de dar por buena
     # una duración.
-    "en": {"slow": 2.40, "median": 2.71, "fast": 3.05, "samples": 2},
+    "en": {"slow": 2.40, "median": 2.58, "fast": 3.05, "samples": 3},
 }
 
 # Voz por defecto de cada idioma, manteniendo el género para que una serie

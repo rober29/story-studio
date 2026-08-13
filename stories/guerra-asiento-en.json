@@ -1,0 +1,40 @@
+{
+ "id": "guerra-asiento-en",
+ "series": "hidden-history",
+ "images_from": "guerra-asiento",
+ "title": "The War of Jenkins' Ear",
+ "min_duration": 68,
+ "characters": {
+  "fandino": "a cartoon character with a round head and dot eyes, wearing a large red spanish naval tricorne hat, a blue naval coat with yellow buttons, holding a sword"
+ },
+ "scenes": [
+  {
+   "text": "Did you know that one of the most absurd military conflicts in human history actually started over a severed ear? Two massive global empires collided violently because of a single sliced human appendage.",
+   "prompt": "Wide 16:9 landscape view with {fandino} standing in the center pointing at a giant floating stick-figure ear on the left, while a giant British crown sits on the right, and two tiny cartoon character armies face off in the far distant background under bright flat light."
+  },
+  {
+   "text": "Back in the year seventeen thirty one, a Spanish coast guard captain named Fandiño boarded a British vessel suspected of illegal smuggling off the turbulent waters of the Caribbean Sea.",
+   "prompt": "Wide 16:9 view of a wooden ship deck on a calm blue sea, with {fandino} in his blue coat standing in the center, wooden barrels of rum stacked on the left, a wooden cargo crate on the right, and cartoon character sailors mopping the deck in the background."
+  },
+  {
+   "text": "Captain Fandiño discovered a huge load of illegal contraband onboard, drew his sharp steel sword, and sliced off British captain Robert Jenkins' ear as a brutal and humiliating warning punishment.",
+   "prompt": "Wide 16:9 shot on the ship deck where {fandino} raises his sword in the center, a terrified cartoon character sailor holding his ear on the left, wooden cargo crates stacked on the right, and seagulls flying in the cloudy sky far behind them."
+  },
+  {
+   "text": "To make matters worse, the Spanish captain mockingly told Jenkins to take his sliced ear directly to the British king as a stern warning against any future illegal trade attempts.",
+   "prompt": "Wide 16:9 view on a sunny tropical dock, {fandino} gesturing with his hand on the center-left, a British cartoon character captain holding a small glass jar on the right, tropical palm trees on the far left, and a large galleon anchored in the background water."
+  },
+  {
+   "text": "Jenkins carefully preserved his severed ear inside a glass jar filled with alcohol, waiting seven long years before finally presenting this disgusting piece of physical evidence to furious British politicians.",
+   "prompt": "Wide 16:9 view inside a grand British Parliament hall with wooden benches, a British cartoon character holding up a glass jar on the center table, {fandino} watching from a framed portrait on the left wall, angry cartoon character politicians on the right, and tall stained-glass windows in the background."
+  },
+  {
+   "text": "British parliamentarians seized upon the famous jar as the ultimate excuse to officially declare war on Spain, aiming to seize control of valuable oceanic trade routes across the lucrative Americas.",
+   "prompt": "Wide 16:9 view of a war room with a large wooden map table in the center, cartoon character politicians shouting on the left, a giant map of the Caribbean pinned on the right wall, and colorful military banners hanging from the ceiling in the background."
+  },
+  {
+   "text": "This bizarre armed conflict lasted nearly ten long years and claimed thousands of human lives, all tragically triggered by nothing more than a single ear sliced off on the open sea.",
+   "prompt": "Wide 16:9 landscape view of a battle aftermath with two tiny cartoon character armies marching away in the background, a velvet pillow in the center holding a small glass jar with an ear, palm trees on the left, and a sinking ship on the right horizon."
+  }
+ ]
+}

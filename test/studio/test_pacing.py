@@ -26,6 +26,7 @@ MEDIDOS = [
 MEDIDOS_EN = [
     ("odd-history-3", 175, 59.33),
     ("mansa-musa-mali-en", 212, 86.09),
+    ("guerra-asiento-en", 214, 82.94),
 ]
 
 
