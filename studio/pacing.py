@@ -14,8 +14,16 @@ from studio.errors import StudioError
 # 'fast' es el PEOR CASO PARA LA DURACIÓN: si el TTS corre rápido, el reel sale
 # corto. Por eso el suelo se garantiza contra 'fast' y no contra la mediana.
 PACE = {
-    # 7 reels medidos: 2,153 / 2,201 / 2,246 / 2,477 / 2,480 / 2,482 / 2,483
-    "es": {"slow": 2.15, "median": 2.477, "fast": 2.50, "samples": 7},
+    # 10 reels medidos, entre 2,153 y 2,672. Nueve caben en 2,15-2,50, pero
+    # norton-i-emperador-estados-1 narró a 2,672 y rompió la cota: el reel salió
+    # en 65,2 s pidiendo un suelo de 68.
+    #
+    # 'fast' sube a 2,70 aunque nueve de diez no lo necesiten, porque su trabajo
+    # es cubrir el PEOR caso: con 2,50 la garantía era simplemente falsa, y una
+    # garantía falsa en el código es peor que no tenerla. El precio son guiones
+    # españoles un 8 % más largos (184 palabras para 68 s en vez de 171), o sea
+    # reels de ~74 s en vez de ~69.
+    "es": {"slow": 2.15, "median": 2.481, "fast": 2.70, "samples": 10},
     # Tres muestras, y discrepan MUCHO más que las siete españolas:
     #   odd-history-3        175 palabras / 59,33 s = 2,950
     #   mansa-musa-mali-en   212 palabras / 86,09 s = 2,463
@@ -33,7 +41,7 @@ PACE = {
     # monetización entera. Pero conviene saber que el inglés no es predecible
     # como el español, y medir con story_pace.py --probe antes de dar por buena
     # una duración.
-    "en": {"slow": 2.40, "median": 2.58, "fast": 3.05, "samples": 3},
+    "en": {"slow": 2.40, "median": 2.58, "fast": 3.05, "samples": 4},
 }
 
 # Voz por defecto de cada idioma, manteniendo el género para que una serie

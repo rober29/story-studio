@@ -10,6 +10,9 @@ from studio.errors import StudioError
 # Los siete reels medidos, con su duración de voz real. Esta tabla es la fuente
 # de las constantes de studio/pacing.py: si alguien las cambia sin volver a
 # medir, estos tests lo dicen.
+# Todas las duraciones están NORMALIZADAS a velocidad 1.0, igual que las
+# reporta story_pace.py --measure: un reel con voice_rate 0,9 dura un 11 % más
+# y sin corregirlo aparentaría narrar más despacio de lo que narra.
 MEDIDOS = [
     ("plaga-baile", 94, 43.66),
     ("tutankamon", 103, 46.80),
@@ -18,7 +21,17 @@ MEDIDOS = [
     ("orina-romana", 107, 43.15),
     ("tenochtitlan", 100, 40.30),
     ("yamaguchi", 125, 50.35),
+    ("mansa-musa-mali", 181, 72.65),
+    ("guerra-asiento", 171, 68.42),
+    # el que rompió la cota: 2,672 cuando 'fast' estaba en 2,50
+    ("norton-i-emperador-estados-1", 182, 68.11),
 ]
+
+# Los siete que existían antes de que hubiera comprobación de duración.
+ANTES_DEL_CHECK = {
+    "plaga-baile", "tutankamon", "markov", "cosas-raras-3",
+    "orina-romana", "tenochtitlan", "yamaguchi",
+}
 
 # Los reels en inglés medidos. Ojo a la dispersión: 2,950 contra 2,463 con la
 # misma voz. Palabras/s no es una constante del idioma, depende de lo largas que
@@ -27,6 +40,7 @@ MEDIDOS_EN = [
     ("odd-history-3", 175, 59.33),
     ("mansa-musa-mali-en", 212, 86.09),
     ("guerra-asiento-en", 214, 82.94),
+    ("norton-i-emperador-estados-1-en", 215, 83.57),
 ]
 
 
@@ -66,8 +80,10 @@ class TestTargetWords(unittest.TestCase):
             self.assertGreaterEqual(minimo, suelo)
 
     def test_recommended_floor_asks_for_a_sane_amount(self):
-        # 65 s de suelo -> del orden de 163 palabras
-        self.assertEqual(pacing.target_words(65, "es"), 163)
+        # Banda y no cifra exacta: el número sale de 'fast', que se recalibra
+        # con cada reel nuevo. Lo que este test tiene que atrapar es un orden de
+        # magnitud absurdo, no que la calibración haya cambiado.
+        self.assertTrue(150 <= pacing.target_words(65, "es") <= 200)
 
     def test_more_seconds_means_more_words(self):
         self.assertGreater(pacing.target_words(70, "es"), pacing.target_words(60, "es"))
@@ -104,15 +120,25 @@ class TestCheckScript(unittest.TestCase):
         mensaje = str(ctx.exception)
         self.assertIn("demo.json", mensaje)
         self.assertIn("100 palabras", mensaje)
-        self.assertIn("63", mensaje)  # 163 necesarias - 100
+        # el hueco se deriva de la calibración, no se codifica: lo que se
+        # comprueba es que el mensaje lo diga, para que el reintento sepa
+        # cuántas palabras alargar
+        faltan = pacing.target_words(65, "es") - 100
+        self.assertIn(str(faltan), mensaje)
 
     def test_no_floor_means_no_check(self):
         pacing.check_script(1, "es", 0)
 
     def test_the_existing_reels_would_be_rejected_for_tiktok(self):
-        # es justo el hallazgo que motivó todo esto: solo uno califica
+        # El hallazgo que motivó todo esto: de los siete reels que existían
+        # ANTES de que hubiera comprobación de duración, solo uno superaba los
+        # 60 s de TikTok. Se filtra por nombre y no por posición en MEDIDOS,
+        # porque a esa tabla se le siguen añadiendo reels nuevos —escritos ya
+        # con el suelo— y contarlos aquí borraría el hallazgo.
         califican = 0
-        for _, palabras, _ in MEDIDOS:
+        for nombre, palabras, _ in MEDIDOS:
+            if nombre not in ANTES_DEL_CHECK:
+                continue
             try:
                 pacing.check_script(palabras, "es", pacing.TIKTOK_FLOOR)
                 califican += 1

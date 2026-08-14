@@ -48,6 +48,12 @@ def measure_all():
         except (StudioError, KeyError, ValueError, OSError):
             continue
         palabras = len(script_text(story).split())
+        # Normalizado a velocidad 1.0. Un reel con voice_rate 0,9 dura un 11 %
+        # más, así que sin corregirlo reportaría un ritmo artificialmente BAJO
+        # —y el sesgo va en la dirección peligrosa: haría parecer que 'fast'
+        # tiene margen cuando no lo tiene. Medido sobre odd-history-3, que a
+        # 0,9 daba 2,654 y en realidad narra a 2,949.
+        rate = story.get("voice_rate") or 1.0
         filas.append(
             {
                 "id": story["id"],
@@ -55,7 +61,8 @@ def measure_all():
                 "lang": story.get("lang", "es"),
                 "words": palabras,
                 "seconds": segundos,
-                "wps": pacing.measure(palabras, segundos),
+                "rate": rate,
+                "wps": pacing.measure(palabras, segundos * rate),
             }
         )
     return filas
@@ -66,12 +73,15 @@ def print_measure():
     if not filas:
         print("no hay reels verificados todavía; genera alguno con --phase all")
         return
-    print(f"{'reel':18}{'fmt':5}{'idioma':8}{'palabras':>9}{'voz':>9}{'palabras/s':>12}")
+    print(f"{'reel':32}{'fmt':5}{'idioma':8}{'palabras':>9}{'voz':>9}"
+          f"{'vel':>6}{'palabras/s':>12}")
     for fila in sorted(filas, key=lambda f: f["wps"]):
         print(
-            f"{fila['id']:18}{fila['format']:5}{fila['lang']:8}"
-            f"{fila['words']:9}{fila['seconds']:8.2f}s{fila['wps']:12.3f}"
+            f"{fila['id']:32}{fila['format']:5}{fila['lang']:8}"
+            f"{fila['words']:9}{fila['seconds']:8.2f}s{fila['rate']:6.2f}"
+            f"{fila['wps']:12.3f}"
         )
+    print("  (palabras/s normalizado a velocidad 1.0)")
 
     print()
     for lang in sorted({f["lang"] for f in filas}):

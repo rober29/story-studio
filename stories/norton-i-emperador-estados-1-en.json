@@ -1,40 +1,40 @@
 {
- "id": "norton-i-emperador-estados-1-en",
- "series": "hidden-history",
- "images_from": "norton-i-emperador-estados-1",
- "title": "Part One: The Imperial Proclamation",
- "min_duration": 68,
- "characters": {
-  "norton": "A stout forty-year-old man with a bushy dark beard and an upright regal posture, wearing a worn navy blue military jacket with tarnished gold epaulets, dark grey trousers, and a tall beaver hat with a long peacock feather"
- },
- "scenes": [
-  {
-   "text": "Did you know that back in the nineteenth century, the United States had a famous self-proclaimed emperor who printed his own paper money, which local shopkeepers accepted out of pure affection?",
-   "prompt": "{norton} standing confidently in the center of a bustling 19th-century San Francisco street, holding out a piece of colorful paper money to a smiling shopkeeper on the right, while horse-drawn carriages pass on the left and wooden buildings fill the background."
+  "id": "norton-i-emperador-estados-1-en",
+  "series": "hidden-history",
+  "images_from": "norton-i-emperador-estados-1",
+  "title": "Part One: The Imperial Proclamation",
+  "min_duration": 68,
+  "characters": {
+    "norton": "A stout forty-year-old man with a bushy dark beard and an upright regal posture, wearing a worn navy blue military jacket with tarnished gold epaulets, dark grey trousers, and a tall beaver hat with a long peacock feather"
   },
-  {
-   "text": "In the year eighteen fifty-nine, a very wealthy San Francisco merchant named Joshua Norton lost his entire fortune after a disastrous attempt to corner the California rice market completely failed.",
-   "prompt": "A crowded Victorian merchant office in San Francisco, {norton} slumped at a cluttered central desk with his head in his hands, clerks rushing past carrying ledgers on the left, towers of rice sacks and shouting traders on the right, and tall windows showing a harbour crowded with masts in the background."
-  },
-  {
-   "text": "After suffering total financial ruin and completely disappearing from public view for several long months, Norton suddenly returned to the city with a radically altered mindset and a truly extraordinary vision.",
-   "prompt": "{norton} walking thoughtfully along a dusty San Francisco bay shoreline at center, ships docked in the harbour on the left, and misty city hills rising on the right side under dramatic afternoon light."
-  },
-  {
-   "text": "He marched straight into a local newspaper office and handed over a handwritten official proclamation, formally declaring himself Norton the First, Emperor of the United States and Protector of Mexico.",
-   "prompt": "Inside a busy 1850s newspaper printing office, {norton} at center handing a formal letter to an amazed editor on the left, rows of typesetters working at their cases on the right, and huge printing presses running while paper boys carry out bundles in the background."
-  },
-  {
-   "text": "Instead of committing him to an asylum, the sympathetic citizens of San Francisco chose to kindly play along with his eccentric royal persona with genuine fondness and deep community respect.",
-   "prompt": "A lively San Francisco city square, with {norton} striding happily through the center, cheerful citizens tipping their hats on the left, and street vendors watching with amusement on the right."
-  },
-  {
-   "text": "He inspected the busy city streets every single day wearing a regal navy blue military coat adorned with shiny golden epaulets and a grand hat topped with bright peacock feathers.",
-   "prompt": "A wide view of a sunny street corner, with {norton} wearing his royal attire standing proudly in the middle, wooden shopfronts on the left, pedestrians strolling on the right, and a cable car in the distance."
-  },
-  {
-   "text": "However, one intriguing question remained unanswered: how did this completely broke monarch pay for all his daily expenses and eat at fancy restaurants without holding a single official American dollar?",
-   "prompt": "Inside an elegant 19th-century restaurant, {norton} seated at a central dining table eating a lavish meal, waiters carrying trays on the left, and wealthy diners watching him with smiles from tables on the right."
-  }
- ]
+  "scenes": [
+    {
+      "text": "Did you know that back in the nineteenth century, the United States had a famous self-proclaimed emperor who printed his own paper money, which local shopkeepers accepted out of pure affection?",
+      "prompt": "{norton} standing confidently in the center of a bustling 19th-century San Francisco street, holding out a piece of colorful paper money to a smiling shopkeeper on the right, while horse-drawn carriages pass on the left and wooden buildings fill the background."
+    },
+    {
+      "text": "In the year eighteen fifty-nine, a very wealthy San Francisco merchant named Joshua Norton lost his entire fortune after a disastrous attempt to corner the California rice market completely failed.",
+      "prompt": "A crowded Victorian merchant office in San Francisco, {norton} slumped at a cluttered central desk with his head in his hands, clerks rushing past carrying ledgers on the left, towers of rice sacks and shouting traders on the right, and tall windows showing a harbour crowded with masts in the background."
+    },
+    {
+      "text": "After suffering total financial ruin and completely disappearing from public view for several long months, Norton suddenly returned to the city with a radically altered mindset and a truly extraordinary vision.",
+      "prompt": "{norton} walking thoughtfully along a dusty San Francisco bay shoreline at center, ships docked in the harbour on the left, and misty city hills rising on the right side under dramatic afternoon light."
+    },
+    {
+      "text": "He marched straight into a local newspaper office and handed over a handwritten proclamation, formally declaring himself Norton the First, Emperor of these United States. The Protector of Mexico title came years later.",
+      "prompt": "Inside a busy 1850s newspaper printing office, {norton} at center handing a formal letter to an amazed editor on the left, rows of typesetters working at their cases on the right, and huge printing presses running while paper boys carry out bundles in the background."
+    },
+    {
+      "text": "Instead of committing him to an asylum, the sympathetic citizens of San Francisco chose to kindly play along with his eccentric royal persona with genuine fondness and deep community respect.",
+      "prompt": "A lively San Francisco city square, with {norton} striding happily through the center, cheerful citizens tipping their hats on the left, and street vendors watching with amusement on the right."
+    },
+    {
+      "text": "He inspected the busy city streets every single day wearing a regal navy blue military coat adorned with shiny golden epaulets and a grand hat topped with bright peacock feathers.",
+      "prompt": "A wide view of a sunny street corner, with {norton} wearing his royal attire standing proudly in the middle, wooden shopfronts on the left, pedestrians strolling on the right, and a cable car in the distance."
+    },
+    {
+      "text": "However, one intriguing question remained unanswered: how did this completely broke monarch pay for all his daily expenses and eat at fancy restaurants without holding a single official American dollar?",
+      "prompt": "Inside an elegant 19th-century restaurant, {norton} seated at a central dining table eating a lavish meal, waiters carrying trays on the left, and wealthy diners watching him with smiles from tables on the right."
+    }
+  ]
 }
