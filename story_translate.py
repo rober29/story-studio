@@ -56,6 +56,13 @@ SCHEMA = {
 }
 
 
+def id_destino(story_id, origen_lang, destino_lang):
+    """'x-es' -> 'x-en'. Si no lleva sufijo de idioma, se le añade."""
+    if story_id.endswith(f"-{origen_lang}"):
+        story_id = story_id[: -len(origen_lang) - 1]
+    return f"{story_id}-{destino_lang}"
+
+
 def destino_de(ruta, origen_lang, destino_lang):
     """stories/x-es.json -> stories/x-en.json.
 
@@ -64,9 +71,38 @@ def destino_de(ruta, origen_lang, destino_lang):
     """
     carpeta, archivo = os.path.split(os.path.abspath(ruta))
     base = os.path.splitext(archivo)[0]
-    if base.endswith(f"-{origen_lang}"):
-        base = base[: -len(origen_lang) - 1]
-    return os.path.join(carpeta, f"{base}-{destino_lang}.json")
+    return os.path.join(carpeta, f"{id_destino(base, origen_lang, destino_lang)}.json")
+
+
+def registrar_partes(base_dir, serie_origen, serie_destino, origen_lang, destino_lang):
+    """Copia el orden del arco a la serie del idioma destino.
+
+    Sin esto la traducción sale SIN número de parte: la etiqueta 'Pt. N' la
+    deriva merge_series de la lista 'parts', y cada serie tiene la suya. El
+    español mostraba 'Pt. 1' y el inglés nada.
+
+    Se copia la lista ENTERA traducida, no solo la parte que se acaba de
+    escribir. La lista declara el orden del arco, no qué archivos existen, así
+    que traducir la parte 3 antes que la 2 no descoloca la numeración.
+    """
+    ruta_origen = os.path.join(base_dir, "series", f"{serie_origen}.json")
+    ruta_destino = os.path.join(base_dir, "series", f"{serie_destino}.json")
+    if not (os.path.isfile(ruta_origen) and os.path.isfile(ruta_destino)):
+        return None
+
+    with open(ruta_origen, encoding="utf-8") as f:
+        partes = json.load(f).get("parts") or []
+    if not partes:
+        return None
+
+    with open(ruta_destino, encoding="utf-8") as f:
+        destino = json.load(f)
+    esperadas = [id_destino(p, origen_lang, destino_lang) for p in partes]
+    if destino.get("parts") == esperadas:
+        return None
+    destino["parts"] = esperadas
+    write_json(ruta_destino, destino)
+    return ruta_destino
 
 
 def build_prompt(story, lang_code, palabras, palabras_max, error=None):
@@ -264,6 +300,14 @@ def main():
     print(f"\nescrito: {salida}")
     print(f"{len(hija['scenes'])} escenas, {total} palabras "
           f"(~{total / pacing.PACE[args.lang]['median']:.0f}s)")
+
+    if original.get("series") and args.series:
+        ruta_serie = registrar_partes(
+            os.path.dirname(salida), original["series"], args.series,
+            args.from_lang, args.lang,
+        )
+        if ruta_serie:
+            print(f"orden del arco copiado a {ruta_serie}")
 
     slug = anotar_backlog(original["id"], story_id)
     if slug:

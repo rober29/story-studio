@@ -1,15 +1,19 @@
 {
-  "format": "D",
-  "banner": "Hidden History",
-  "voice": "en-US-AndrewNeural",
-  "watermark": "@hiddenhistory.doc",
-  "lang": "en",
-  "max_chars_per_card": 26,
-  "max_lines_per_card": 1,
-  "min_duration": 65,
-  "characters": {
-    "narrador": "a cartoon character with a round head, dot eyes and a wavy simple mouth, thin arms and legs, wearing a small red bow tie"
-  },
-  "parts": [],
-  "bgm_volume": 0
+ "format": "D",
+ "banner": "Hidden History",
+ "voice": "en-US-AndrewNeural",
+ "watermark": "@hiddenhistory.doc",
+ "lang": "en",
+ "max_chars_per_card": 26,
+ "max_lines_per_card": 1,
+ "min_duration": 65,
+ "characters": {
+  "narrador": "a cartoon character with a round head, dot eyes and a wavy simple mouth, thin arms and legs, wearing a small red bow tie"
+ },
+ "parts": [
+  "norton-i-emperador-estados-1-en",
+  "norton-i-emperador-estados-2-en",
+  "norton-i-emperador-estados-3-en"
+ ],
+ "bgm_volume": 0
 }
