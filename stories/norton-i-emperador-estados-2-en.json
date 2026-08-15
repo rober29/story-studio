@@ -1,0 +1,40 @@
+{
+ "id": "norton-i-emperador-estados-2-en",
+ "series": "hidden-history",
+ "images_from": "norton-i-emperador-estados-2",
+ "title": "Part Two: Emperor Norton's Currency",
+ "min_duration": 68,
+ "characters": {
+  "norton": "A stout forty-year-old man with a bushy dark beard and an upright regal posture, wearing a worn navy blue military jacket with tarnished gold epaulets, dark grey trousers, and a tall beaver hat with a long peacock feather"
+ },
+ "scenes": [
+  {
+   "text": "After running completely out of official money, the ingenious Emperor Norton cleverly solved his personal liquidity problems by issuing his very own custom banknotes, printed on paper at a local print shop.",
+   "prompt": "Inside a crowded 1860s print shop, {norton} at center overseeing a printer working a hand press on the left, apprentices hanging freshly printed notes to dry on lines across the right, and an open doorway showing a busy street full of carriages in the background."
+  },
+  {
+   "text": "These legendary imperial banknotes ranged in denomination from fifty cents up to ten dollars and officially promised to pay a seven percent annual interest starting in the year eighteen eighty.",
+   "prompt": "{norton} at center signing elaborate promissory notes at a wooden desk, a queue of curious citizens waiting their turn on the left, a clerk pressing gold wax seals on the right, and shelves of ledgers rising to the ceiling behind them in the background."
+  },
+  {
+   "text": "Most surprisingly, local shopkeepers, tavern keepers, and restaurant owners across all of San Francisco actually began accepting these fictional imperial banknotes as though they were genuine, official legal government tender.",
+   "prompt": "Inside a bustling wooden saloon, {norton} at center presenting his paper note to a friendly bartender behind the counter on the left, while patrons drink and play cards at tables on the right."
+  },
+  {
+   "text": "They certainly did not do this out of foolish ignorance, but rather out of deep affection for the beloved character who brightened the bay area streets every morning in his worn uniform.",
+   "prompt": "A vibrant street market in San Francisco, with {norton} walking down the central aisle, market stalls selling fresh fruits on the left, and laughing townsfolk greeting him on the right."
+  },
+  {
+   "text": "Proud local business owners even displayed large signs prominently in their shop windows, eagerly announcing to everyone that their establishment was honored with the official seal of His Imperial Majesty.",
+   "prompt": "A busy 19th-century bakery street front, {norton} standing proudly on the right beside a framed imperial seal in the window, the baker and a cluster of customers gathered in the doorway on the left, and a crowded street of shopfronts, handcarts and pedestrians stretching into the background."
+  },
+  {
+   "text": "Emperor Norton comfortably paid for all his daily breakfasts and personal purchases using these hand signed paper notes, while also collecting a modest weekly tax that local citizens always gladly paid.",
+   "prompt": "A busy cafe interior, {norton} at a central table handing a custom note to a waitress on the right, other tables full of diners watching and whispering on the left, and a window showing a crowded street with a cable car passing in the background."
+  },
+  {
+   "text": "Everything functioned smoothly throughout the entire city until one day, an overzealous rookie police officer made the terrible mistake of arresting the Emperor himself on ridiculous charges of unlawful street vagrancy.",
+   "prompt": "A dramatic street scene at dusk, where a young policeman on the left places a hand on {norton}'s shoulder at center, while shocked bystanders react in surprise on the right."
+  }
+ ]
+}

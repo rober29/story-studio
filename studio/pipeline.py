@@ -676,6 +676,19 @@ def _overlay_png(story, chapter, path):
     return path
 
 
+# Cola que se añade al ÚLTIMO plano de un reel. ffmpeg cuantiza cada segmento a
+# fotogramas enteros, así que la suma de veintiocho planos puede caer unos
+# milisegundos por debajo del audio. verify tolera hasta 0,60 s de más pero solo
+# 0,05 s de menos, y la asimetría es correcta: un vídeo corto trunca la
+# narración y uno largo solo congela el último fotograma.
+#
+# Hasta ahora todos los reels habían caído del lado largo por casualidad;
+# norton-i-emperador-estados-2-en cayó del corto por 53 ms. En vez de aflojar la
+# tolerancia —que es la que protege de perder narración— se empuja siempre al
+# lado seguro.
+COLA_ULTIMO_PLANO = 0.15
+
+
 def _scene_segment(image_path, overlay_path, duration, out_path, zoom=True):
     """Un plano: Ken Burns opcional + overlay estático, vía ffmpeg."""
     frames = max(1, int(round(duration * FPS)))
@@ -794,10 +807,13 @@ def _visuals_shots(story, manifest, task_dir, images_dir, timings, duration, qua
                     frame.save(os.path.join(framed_dir, nombre), quality=93)
                     manifest.record(slot, fkey, nombre, framed_dir, scene=scene)
 
+                duracion = shot["end"] - shot["start"]
+                if numero == len(shots) - 1:
+                    duracion += COLA_ULTIMO_PLANO
                 segmento = os.path.join(work, "seg-%03d.mp4" % numero)
                 _scene_segment(
                     manifest.path_of(slot, framed_dir), overlay,
-                    shot["end"] - shot["start"], segmento, zoom=False,
+                    duracion, segmento, zoom=False,
                 )
                 segments.append((numero, segmento))
 
