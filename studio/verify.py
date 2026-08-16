@@ -129,7 +129,7 @@ def verify_story(story):
     checks.append(
         Check(
             "duracion",
-            -0.05 <= delta <= 0.60,
+            timing.DELTA_MIN <= delta <= timing.DELTA_MAX,
             f"imagen {video_duration:.3f}s, voz {voice_duration:.3f}s, delta {delta:+.3f}s",
         )
     )

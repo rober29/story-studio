@@ -676,19 +676,6 @@ def _overlay_png(story, chapter, path):
     return path
 
 
-# Cola que se añade al ÚLTIMO plano de un reel. ffmpeg cuantiza cada segmento a
-# fotogramas enteros, así que la suma de veintiocho planos puede caer unos
-# milisegundos por debajo del audio. verify tolera hasta 0,60 s de más pero solo
-# 0,05 s de menos, y la asimetría es correcta: un vídeo corto trunca la
-# narración y uno largo solo congela el último fotograma.
-#
-# Hasta ahora todos los reels habían caído del lado largo por casualidad;
-# norton-i-emperador-estados-2-en cayó del corto por 53 ms. En vez de aflojar la
-# tolerancia —que es la que protege de perder narración— se empuja siempre al
-# lado seguro.
-COLA_ULTIMO_PLANO = 0.15
-
-
 def _scene_segment(image_path, overlay_path, duration, out_path, zoom=True):
     """Un plano: Ken Burns opcional + overlay estático, vía ffmpeg."""
     frames = max(1, int(round(duration * FPS)))
@@ -809,7 +796,7 @@ def _visuals_shots(story, manifest, task_dir, images_dir, timings, duration, qua
 
                 duracion = shot["end"] - shot["start"]
                 if numero == len(shots) - 1:
-                    duracion += COLA_ULTIMO_PLANO
+                    duracion += timing.COLA_ULTIMO_PLANO
                 segmento = os.path.join(work, "seg-%03d.mp4" % numero)
                 _scene_segment(
                     manifest.path_of(slot, framed_dir), overlay,
@@ -888,11 +875,17 @@ def phase_visuals(story, force=False, quality="draft", budget=None, assume_yes=F
         out = _visuals_slideshow(story, manifest, task_dir, images_dir, timings, duration, quality)
 
     made = ffmpeg.stream_duration(out, "v")
-    print(f"combined: {out} ({made:.2f}s, audio {duration:.2f}s)")
-    if abs(made - duration) > 0.25:
+    delta = made - duration
+    print(f"combined: {out} ({made:.2f}s, audio {duration:.2f}s, delta {delta:+.3f}s)")
+    # Misma banda que verify, y por la misma razón: quedarse corto trunca la
+    # narración, pasarse solo congela el último fotograma. Antes esto era ±0,25
+    # simétrico y rechazaba reels que verify daba por buenos, porque el último
+    # plano lleva una cola deliberada.
+    if not timing.DELTA_MIN <= delta <= timing.DELTA_MAX:
         raise StudioError(
-            f"el video mudo dura {made:.2f}s y la voz {duration:.2f}s; "
-            f"no deberían diferir. Revisa los tiempos de las escenas"
+            f"el video mudo dura {made:.2f}s y la voz {duration:.2f}s "
+            f"(delta {delta:+.3f}s, admitido entre {timing.DELTA_MIN:+.2f} y "
+            f"{timing.DELTA_MAX:+.2f}). Revisa los tiempos de las escenas"
         )
 
 

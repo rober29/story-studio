@@ -1,0 +1,40 @@
+{
+ "id": "norton-i-emperador-estados-3-en",
+ "series": "hidden-history",
+ "images_from": "norton-i-emperador-estados-3",
+ "title": "Part Three: The Imperial Legacy",
+ "min_duration": 68,
+ "characters": {
+  "norton": "A stout forty-year-old man with a bushy dark beard and an upright regal posture, wearing a worn navy blue military jacket with tarnished gold epaulets, dark grey trousers, and a tall beaver hat with a long peacock feather"
+ },
+ "scenes": [
+  {
+   "text": "When the local San Francisco police made the terrible mistake of arresting Emperor Norton for simple vagrancy, intense public outrage instantly exploded across every single local newspaper in town.",
+   "prompt": "Outside a Victorian police station, a large crowd of angry citizens on the left protesting, while {norton} stands calmly in the doorway at center next to nervous officers on the right."
+  },
+  {
+   "text": "The chief of police quickly ordered his immediate release, offered a public apology, and formally decreed that all police officers must respectfully salute the beloved emperor whenever he passed them by.",
+   "prompt": "Inside the police chief's grand office, the chief of police on the left bowing politely and shaking hands with {norton} at center, while police officers salute formally on the right."
+  },
+  {
+   "text": "For over two full decades, Emperor Norton issued famous imperial proclamations, repeatedly demanding a bridge to Oakland and calling to dissolve the United States Congress due to rampant political corruption.",
+   "prompt": "{norton} standing on a wooden pier at center looking out over the misty San Francisco bay toward Oakland, holding a scroll in his hand, with seagulls flying overhead and ships on the left."
+  },
+  {
+   "text": "Although his official decrees seemed like wild eccentricities back then, decades later the city actually built the massive bay bridge to Oakland that the visionary emperor had persistently demanded.",
+   "prompt": "A sweeping wide view showing {norton} on the left pointing across the bay, overlaid conceptually with a giant suspension bridge stretching toward hills on the right under dramatic skies."
+  },
+  {
+   "text": "When Emperor Norton collapsed and died suddenly in eighteen eighty, tens of thousands of grieving citizens flooded the city streets to attend his grand funeral and bid farewell to their monarch.",
+   "prompt": "A solemn and massive funeral procession along San Francisco streets, with a horse-drawn hearse in the center surrounded by thousands of mourning citizens holding flowers on the left and right."
+  },
+  {
+   "text": "Inside his pockets, authorities only found a few loose dollars alongside several of his own imperial banknotes, signed by hand by an emperor who never actually ruled over a real physical empire.",
+   "prompt": "An antique auction room filled with light, where an auctioneer at center holds up a pristine imperial banknote, with eager collectors bidding with paddle signs on the left and right."
+  },
+  {
+   "text": "Those custom banknotes promised full payment in eighteen eighty, the exact year he passed away, so none were ever redeemed. People kept them anyway, and today they sell at auctions for thousands.",
+   "prompt": "A golden hour wide view of San Francisco city bay, with a subtle shadowy silhouette of {norton} standing atop a hill in center looking over the modern city skyline stretching left to right."
+  }
+ ]
+}

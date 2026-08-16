@@ -17,6 +17,25 @@ import math
 
 from studio.errors import StudioError
 
+# Cuánto puede desviarse la duración de la pista visual respecto a la de la voz.
+# ASIMÉTRICO a propósito: un vídeo más CORTO trunca la narración, mientras que
+# uno más largo solo congela el último fotograma un instante. Por eso apenas se
+# tolera por abajo y con holgura por arriba.
+#
+# Viven aquí y no en pipeline.py o verify.py porque los DOS comprueban lo mismo
+# —el montaje al terminar la fase de vídeo, y el MP4 final— y tenerlo duplicado
+# ya causó un fallo: phase_visuals usaba ±0,25 simétrico y rechazaba un reel que
+# verify habría dado por bueno.
+DELTA_MIN = -0.05
+DELTA_MAX = 0.60
+
+# Cola que se añade al ÚLTIMO plano de un reel para caer siempre del lado
+# seguro. ffmpeg cuantiza cada segmento a fotogramas enteros, así que la suma de
+# veintiocho planos puede quedar unos milisegundos por debajo del audio; medido
+# el 2026-08-14, un reel salió 53 ms corto y falló la comprobación por tres
+# milésimas.
+COLA_ULTIMO_PLANO = 0.15
+
 
 def allocate_scene_words(counts, n_words):
     """Reparte n_words palabras reales entre escenas según sus pesos.
