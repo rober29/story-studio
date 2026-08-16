@@ -204,6 +204,43 @@ def generate_json(prompt, schema, model="gemini-3.6-flash", temperature=0.9):
         raise TransientError(f"la respuesta no era JSON válido: {e}")
 
 
+def inspect_image(data, prompt, schema, mime="image/jpeg",
+                  model="gemini-3.6-flash", temperature=0.0):
+    """Pregunta algo SOBRE una imagen y devuelve la respuesta según el esquema.
+
+    Temperatura 0 por defecto: esto no genera, verifica, y una verificación que
+    cambia de opinión entre dos ejecuciones idénticas no sirve para nada.
+    """
+    payload = {
+        "contents": [
+            {
+                "parts": [
+                    {"inlineData": {"mimeType": mime,
+                                    "data": base64.b64encode(data).decode()}},
+                    {"text": prompt},
+                ]
+            }
+        ],
+        "generationConfig": {
+            "responseMimeType": "application/json",
+            "responseSchema": schema,
+            "temperature": temperature,
+        },
+    }
+    response = post(model, payload)
+    parts = response.get("candidates", [{}])[0].get("content", {}).get("parts", [])
+    text = "".join(p.get("text", "") for p in parts)
+    if not text.strip():
+        finish = response.get("candidates", [{}])[0].get("finishReason", "?")
+        raise TransientError(f"el modelo no devolvió texto (finishReason: {finish})")
+    usage = response.get("usageMetadata", {})
+    usage = dict(usage, cost_usd=cost_of(model, usage))
+    try:
+        return json.loads(text), usage
+    except json.JSONDecodeError as e:
+        raise TransientError(f"la respuesta no era JSON válido: {e}")
+
+
 def list_models():
     """Modelos visibles para esta clave. Es una llamada gratuita."""
     request = urllib.request.Request(

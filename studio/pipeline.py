@@ -585,7 +585,7 @@ def phase_assets(story, force=False, quality="draft", budget=None, assume_yes=Fa
     sheets, sheet_cost = ensure_character_sheets(story, provider, manifest, quality)
     ref_cache = {}
 
-    failed, downscaled = [], []
+    failed, downscaled, generadas = [], [], []
     spent = sheet_cost  # las hojas también cuentan para el tope de gasto
     for n, job in enumerate(pending, 1):
         refs = load_refs(sheets, job["characters"], ref_cache)
@@ -614,6 +614,7 @@ def phase_assets(story, force=False, quality="draft", budget=None, assume_yes=Fa
             provider=provider.name, model=provider.model, tier=provider.tier,
             cost_usd=meta.get("cost_usd", 0.0),
         )
+        generadas.append((job["slot"], path))
         if min(real_size) < min(job["width"], job["height"]):
             downscaled.append(real_size)
         if budget is not None and spent > budget:
@@ -634,6 +635,29 @@ def phase_assets(story, force=False, quality="draft", budget=None, assume_yes=Fa
             f"(la menor, {worst[0]}x{worst[1]}); se ampliarán a {VIDEO_W}x{VIDEO_H} "
             f"al montar el video"
         )
+    # Lo único que se verifica MIRANDO la imagen. NO_TEXT es una petición al
+    # generador, no un contrato: medido sobre cosas-raras-3, cuatro de cinco
+    # imágenes traían texto en inglés horneado y a simple vista solo se detectó
+    # una esquina. Solo en calidad final: en borrador las imágenes son
+    # desechables y no compensa una llamada por cada una.
+    if generadas and quality == "final":
+        from studio import vision
+
+        con_texto = vision.scan([ruta for _, ruta in generadas])
+        if con_texto:
+            por_ruta = {ruta: slot for slot, ruta in generadas}
+            print(
+                f"\n[aviso] {len(con_texto)}/{len(generadas)} imágenes traen texto "
+                f"horneado pese a pedir lo contrario:"
+            )
+            for ruta, dice in con_texto:
+                print(f"  {por_ruta.get(ruta, ruta)}: {dice[:90]}")
+            print(
+                "  El texto lo pone la capa de subtítulos, no la imagen. Reformula "
+                "el prompt de esa escena y vuelve a lanzar --phase assets: solo se "
+                "regenerarán las que cambien.\n"
+            )
+
     if spent:
         print(f"gasto de esta corrida: {spent:.2f} $")
     print("assets completo")
