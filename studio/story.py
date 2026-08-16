@@ -134,6 +134,8 @@ def merge_series(raw, series):
     if "parts" in series and "part" not in raw:
         try:
             merged["part"] = series["parts"].index(raw.get("id")) + 1
+            # cuántas son en total, para que la última pueda decirlo
+            merged["parts_total"] = len(series["parts"])
         except (ValueError, AttributeError):
             pass
     return merged
@@ -155,11 +157,20 @@ def load_story(path):
 
 
 def part_label(story):
-    """Etiqueta del banner: 'Pt. 3' desde un entero, o el string tal cual."""
+    """Etiqueta del banner: 'Pt. 3' desde un entero, o el string tal cual.
+
+    La ÚLTIMA parte de un arco lo dice: 'Pt. 3 FINAL'. Es información que el
+    espectador usa antes de empezar —nadie quiere engancharse a una serie que
+    quizá no esté terminada— y sale gratis, porque el total ya lo sabe
+    merge_series al numerar desde la lista 'parts'.
+    """
     part = story.get("part")
     if isinstance(part, bool) or part in (None, ""):
         return ""
     if isinstance(part, int):
+        total = story.get("parts_total")
+        if total and total > 1 and part == total:
+            return f"Pt. {part} FINAL"
         return f"Pt. {part}"
     return str(part)
 

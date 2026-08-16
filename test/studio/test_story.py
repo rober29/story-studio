@@ -151,6 +151,29 @@ class TestHelpers(unittest.TestCase):
         self.assertEqual(scene_word_counts(validate_story(minimal())), [4, 4])
 
 
+class TestEtiquetaDeParte(unittest.TestCase):
+    """La última parte de un arco lo dice, y eso decide si alguien lo empieza."""
+
+    def test_la_ultima_lleva_FINAL(self):
+        self.assertEqual(story.part_label({"part": 3, "parts_total": 3}), "Pt. 3 FINAL")
+
+    def test_las_intermedias_no(self):
+        self.assertEqual(story.part_label({"part": 2, "parts_total": 3}), "Pt. 2")
+
+    def test_una_historia_suelta_no_lleva_FINAL(self):
+        # un reel autoconclusivo numerado como parte 1 de 1 no es una serie
+        self.assertEqual(story.part_label({"part": 1, "parts_total": 1}), "Pt. 1")
+
+    def test_sin_total_se_comporta_como_antes(self):
+        self.assertEqual(story.part_label({"part": 3}), "Pt. 3")
+
+    def test_sin_parte_no_hay_etiqueta(self):
+        self.assertEqual(story.part_label({}), "")
+
+    def test_una_parte_escrita_a_mano_se_respeta(self):
+        self.assertEqual(story.part_label({"part": "Epílogo"}), "Epílogo")
+
+
 class TestNombreDelVideo(unittest.TestCase):
     """El MP4 lleva el id, que ya incluye el idioma en las historias nuevas."""
 

@@ -80,8 +80,16 @@ def main(argv=None):
         return 0
 
     if args.phase == "plan":
-        from studio import pipeline
+        from studio import lint, pipeline
 
+        # Antes del coste, porque es cuando todavía sale gratis arreglarlo. Cada
+        # aviso viene de un fallo que se descubrió mirando un reel ya pagado.
+        avisos = lint.lint_story(story)
+        if avisos:
+            print(f"revisión del guion: {len(avisos)} aviso(s)")
+            for aviso in avisos:
+                print(aviso)
+            print()
         pipeline.phase_plan(story, quality=args.quality)
         return 0
 
