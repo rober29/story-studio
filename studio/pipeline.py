@@ -219,13 +219,20 @@ NO_TEXT = (
     "writing anywhere in the image."
 )
 
-# Palabras con las que un prompt pide rotulación A PROPÓSITO. Si aparecen, no se
-# impone NO_TEXT: la escotilla existe para la escena rara que necesita un cartel.
-PIDE_ROTULO = re.compile(
-    r"\b(sign|signs|signage|poster|placard|inscription|inscribed|written|"
-    r"lettering|handwriting|newspaper|headline|scoreboard)\b",
-    re.I,
-)
+# Marca EXPLÍCITA para pedir rotulación. Se escribe a mano dentro del prompt.
+#
+# Antes esto era una lista de palabras —sign, poster, inscription…— y la idea
+# era adivinar cuándo alguien quería un cartel. No funciona: el 2026-08-15 un
+# prompt decía "collectors bidding with paddle signs" (paletas de subasta), la
+# palabra 'signs' disparó la escotilla, y el generador llenó la imagen de
+# carteles inventados, con falta de ortografía y en inglés sobre un reel en
+# español.
+#
+# Inferir intención a partir de vocabulario siempre tendrá falsos positivos
+# (design, signature, signpost). Pedirlo explícitamente no tiene ninguno, y
+# story_writer nunca lo escribe: solo puede activarlo una persona editando el
+# prompt a mano, que es justo para quien existía la excepción.
+MARCA_ROTULO = "[CON TEXTO]"
 
 
 def scene_prompt(scene):
@@ -234,12 +241,12 @@ def scene_prompt(scene):
     Antes no se aplicaba, con el argumento de que el prompt lo escribía una
     persona y debía poder pedir un cartel. Ese argumento caducó cuando
     story_writer empezó a escribirlos: medido el 2026-08-11, el generador puso
-    'RUM' y 'SUPPLIES' en unas cajas que nadie había pedido, y en inglés sobre un
-    reel en español. El texto lo pone siempre la capa de subtítulos.
+    'RUM' y 'SUPPLIES' en unas cajas que nadie había pedido. El texto lo pone
+    siempre la capa de subtítulos.
     """
     prompt = scene["prompt"]
-    if PIDE_ROTULO.search(prompt):
-        return prompt
+    if MARCA_ROTULO in prompt:
+        return prompt.replace(MARCA_ROTULO, "").strip()
     return f"{prompt}. {NO_TEXT}"
 
 

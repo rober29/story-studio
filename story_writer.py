@@ -87,6 +87,13 @@ FORMAT_HINTS = {
         "Lo único prohibido en esa descripción es 'photorealistic', 'realistic', "
         "'3d render', 'cinematic' y 'detailed portrait': esas cinco palabras sí "
         "rompen el estilo, y el estilo global no basta para frenarlas.\n"
+        "Y OJO con las escenas donde el personaje recurrente NO aparece —porque "
+        "ya murió, porque pasan años después, porque el momento es de otros—: "
+        "ahí el prompt tiene que describir a su figura principal con el mismo "
+        "detalle, inline. Medido: en un arco de siete escenas, las dos únicas sin "
+        "{personaje} salieron visiblemente más pobres que el resto, porque toda "
+        "la riqueza del formato viene de esa descripción y el estilo base es "
+        "austero a propósito.\n"
         "Tono divulgativo con humor seco."
     ),
 }

@@ -4,7 +4,7 @@ import unittest
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 
-from studio.pipeline import NO_TEXT, scene_prompt
+from studio.pipeline import MARCA_ROTULO, NO_TEXT, scene_prompt
 
 
 class TestProhibicionDeRotular(unittest.TestCase):
@@ -24,23 +24,33 @@ class TestProhibicionDeRotular(unittest.TestCase):
         original = "wide shot of a ship deck with crates"
         self.assertTrue(scene_prompt({"prompt": original}).startswith(original))
 
-    def test_la_escotilla_deja_pedir_un_cartel(self):
-        # la escena rara que SÍ necesita rotulación no debe quedar bloqueada
-        for pedido in (
-            "a wooden sign hanging over the tavern door",
-            "a newspaper headline about the scandal",
-            "an inscription carved into the stone",
+    def test_la_escotilla_es_una_marca_explicita(self):
+        pedido = f"a wooden sign over the tavern door {MARCA_ROTULO}"
+        self.assertNotIn(NO_TEXT, scene_prompt({"prompt": pedido}))
+
+    def test_la_marca_se_borra_del_prompt(self):
+        # es una instrucción para nosotros, no para el generador
+        salida = scene_prompt({"prompt": f"a tavern sign {MARCA_ROTULO}"})
+        self.assertNotIn(MARCA_ROTULO, salida)
+        self.assertEqual(salida, "a tavern sign")
+
+    def test_mencionar_carteles_sin_la_marca_NO_desactiva_nada(self):
+        """La regresión del 2026-08-15, que costó una imagen inutilizable.
+
+        El prompt decía 'collectors bidding with paddle signs' —paletas de
+        subasta— y la escotilla de entonces buscaba la palabra 'signs'. El
+        generador llenó la imagen de carteles inventados, con faltas y en inglés
+        sobre un reel en español.
+        """
+        for inocente in (
+            "collectors bidding with paddle signs",
+            "an ornate design on the ship hull",
+            "a signpost at the crossroads",
+            "the king's signature on the treaty",
+            "a newspaper office with printing presses",
         ):
-            with self.subTest(pedido=pedido):
-                self.assertNotIn(NO_TEXT, scene_prompt({"prompt": pedido}))
-
-    def test_no_confunde_palabras_que_contienen_sign(self):
-        # 'design' y 'designated' contienen 'sign' pero no piden rotular
-        salida = scene_prompt({"prompt": "an ornate design on the ship hull"})
-        self.assertIn(NO_TEXT, salida)
-
-    def test_es_insensible_a_mayusculas(self):
-        self.assertNotIn(NO_TEXT, scene_prompt({"prompt": "a large SIGN on the wall"}))
+            with self.subTest(inocente=inocente):
+                self.assertIn(NO_TEXT, scene_prompt({"prompt": inocente}))
 
 
 if __name__ == "__main__":
