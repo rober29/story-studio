@@ -643,11 +643,22 @@ def phase_assets(story, force=False, quality="draft", budget=None, assume_yes=Fa
     if generadas and quality == "final":
         from studio import vision
 
-        con_texto = vision.scan([ruta for _, ruta in generadas])
+        # Las escenas que piden rotulación a propósito quedan fuera: un aviso
+        # que salta sobre algo que tú decidiste entrena a ignorarlo.
+        exentos = {
+            "scene-%02d" % i
+            for i, scene in enumerate(story["scenes"])
+            if MARCA_ROTULO in scene.get("prompt", "")
+        }
+        revisables = [
+            ruta for slot, ruta in generadas
+            if slot.rsplit("/", 1)[-1] not in exentos
+        ]
+        con_texto = vision.scan(revisables)
         if con_texto:
             por_ruta = {ruta: slot for slot, ruta in generadas}
             print(
-                f"\n[aviso] {len(con_texto)}/{len(generadas)} imágenes traen texto "
+                f"\n[aviso] {len(con_texto)}/{len(revisables)} imágenes traen texto "
                 f"horneado pese a pedir lo contrario:"
             )
             for ruta, dice in con_texto:
