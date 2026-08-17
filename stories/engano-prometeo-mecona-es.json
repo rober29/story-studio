@@ -1,0 +1,39 @@
+{
+  "id": "engano-prometeo-mecona-es",
+  "series": "historia-oculta",
+  "title": "El engaño de Prometeo en Mecona",
+  "min_duration": 68,
+  "characters": {
+    "prometheus": "tall muscular titan man in his early 30s, long dark wavy hair, sharp clever facial features, wearing a dark green ancient greek tunic with a brown leather belt"
+  },
+  "scenes": [
+    {
+      "text": "¿Sabías que la historia de la mitología griega se fundó sobre una descarada estafa gastronómica? Prometeo engañó ingeniosamente al rey de los dioses para asegurar carne jugosa para la humanidad.",
+      "prompt": "{prometheus} standing center stage with a smirking clever expression, pointing toward a grand ancient Greek feast on the left where mortals eat grilled meat at long wooden tables, while on the right majestic Greek gods look outraged on elevated marble benches, sweeping ancient Greek temple architecture stretching across the distant background"
+    },
+    {
+      "text": "Ocurrió en las llanuras de Mecona, durante una multitudinaria asamblea entre dioses celestiales y pobres mortales. Debían pactar formalmente cómo repartir los sacrificios del ganado para siempre.",
+      "prompt": "vast ancient plain of Mecone, {prometheus} standing near center talking to a majestic Zeus sitting on a golden throne, crowd of hundreds of Greek mortals gathered on the left, divine Olympian gods assemble on marble steps on the right, towering snow-capped mountains under a bright sky in the background"
+    },
+    {
+      "text": "Prometeo sacrificó un buey gigantesco y dividió la presa en dos enormes montones. En el primero ocultó los mejores cortes de carne sabrosa bajo el repulsivo estómago.",
+      "prompt": "wide sacrificial clearing, {prometheus} in center carefully arranging a huge slaughtered brown bull, preparing a pile on the left covered with an ugly gray animal stomach, while crowd of ancient Greek spectators watch from the right, distant ancient village and rolling green hills in the background"
+    },
+    {
+      "text": "En el segundo montón apiló únicamente huesos secos y desprovistos de alimento, pero los cubrió astutamente con una capa de grasa blanca brillante con un aspecto irresistible.",
+      "prompt": "wide angle of sacrificial altar area, {prometheus} standing center smiling subtly, pointing to a massive glittering pile of white animal fat on the right concealing bare bones, contrasting with the dark ugly unappetizing pile of meat on the left, ancient stone pillars and gathered Greek elders filling the background"
+    },
+    {
+      "text": "Prometeo invitó al todopoderoso Zeus a elegir primero. El rey del Olimpo, cegado por la apariencia reluciente y la codicia, cayó en la trampa escogiendo los huesos.",
+      "prompt": "grand ceremonial scene, towering majestic Zeus with white beard and golden crown reaching down greedily toward the shiny pile of fat on the right, {prometheus} watching calmly in center, crowd of nervous mortals whispering on the left, dramatic mountain landscape under sunny skies in the background"
+    },
+    {
+      "text": "Al retirar la capa y descubrir el engaño, la ira de Zeus hizo temblar la tierra entera. Pero la palabra divina dada no podía deshacerse bajo ninguna circunstancia.",
+      "prompt": "dramatic scene of divine fury, powerful Zeus standing center surrounded by dark thunderclouds and crackling lightning bolt, furious expression, while {prometheus} stands resilient on the left, frightened Greek crowd cowering on the right, dark stormy skies and crumbling mountain rocks in the background"
+    },
+    {
+      "text": "Desde aquel día legendario, los humanos queman solo huesos deshechables en los altares y disfrutan de grandes banquetes de carne. Un truco eterno con sabor a victoria.",
+      "prompt": "Wide joyful ancient Greek festival. In the center, a stout elderly priest with a long white beard and a bald sunburnt head, wearing a cream linen robe with a purple sash and a laurel wreath, raises his arms over a large stone altar burning white smoke. On the left, a crowd of happy Greek mortals feasts on roasted meat at long festive tables. On the right, musicians play harps and children dance. A magnificent temple and the sunny Mediterranean horizon fill the background."
+    }
+  ]
+}

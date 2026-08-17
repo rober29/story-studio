@@ -52,6 +52,25 @@ class TestEscenaSinPersonaje(unittest.TestCase):
     def test_no_avisa_cuando_esta(self):
         self.assertNotIn("escena-sin-personaje", self.codigos(BUENO))
 
+    def test_se_da_por_atendido_si_describe_a_alguien_inline(self):
+        """Un aviso que no reconoce su propia solución enseña a ignorarlo."""
+        inline = (
+            "Wide joyful ancient Greek festival. In the center, a stout elderly "
+            "priest with a long white beard wearing a cream linen robe with a "
+            "purple sash raises his arms over a stone altar. On the left a crowd "
+            "of mortals feasts at long tables, on the right musicians play in the "
+            "background."
+        )
+        self.assertNotIn("escena-sin-personaje", self.codigos(inline))
+
+    def test_pero_no_basta_con_mencionar_un_color(self):
+        soso = (
+            "Wide shot of a red stone altar in the center of an empty plaza, "
+            "columns on the left, more columns on the right, and hills in the "
+            "distant background behind the whole empty scene."
+        )
+        self.assertIn("escena-sin-personaje", self.codigos(soso))
+
 
 class TestPromptsPobres(unittest.TestCase):
     def codigos(self, prompt):

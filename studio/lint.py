@@ -33,11 +33,21 @@ REPARTO = re.compile(r"\b(left|right|background|foreground|behind|horizon|distan
 
 # Señales de escena poblada. No basta con repartir: 'cajas a la derecha y
 # gaviotas al fondo' cumple el reparto y da cuatro recortes aburridos.
+#
+# Es una lista, con lo que eso implica: en su primer uso real marcó dos escenas
+# que SÍ tenían gente —'mortals eat grilled meat', 'gathered Greek elders'—
+# simplemente porque no conocía esas palabras. Se amplió con el vocabulario que
+# este nicho usa de verdad, pero seguirá teniendo huecos, así que el aviso dice
+# "revísalo" y no "está vacía".
 POBLADA = re.compile(
     r"\b(crowd|crowds|crowded|bustling|busy|thousands|hundreds|dozens|many|"
-    r"citizens|people|workers|soldiers|traders|merchants|customers|passersby|"
-    r"onlookers|attendants|mourners|collectors|patrons|villagers|procession|"
-    r"market|queue|audience)\b",
+    r"citizens|people|persons|folk|workers|soldiers|warriors|guards|traders|"
+    r"merchants|customers|passersby|onlookers|bystanders|attendants|servants|"
+    r"mourners|collectors|patrons|villagers|townsfolk|peasants|farmers|sailors|"
+    r"mortals|gods|goddesses|titans|elders|priests|priestesses|nobles|courtiers|"
+    r"monks|pilgrims|dancers|musicians|spectators|families|children|students|"
+    r"clerks|apprentices|typesetters|prisoners|slaves|rebels|army|armies|"
+    r"procession|market|queue|audience|festival|banquet|feast|congregation)\b",
     re.I,
 )
 
@@ -45,6 +55,14 @@ POBLADA = re.compile(
 COLORES = re.compile(
     r"\b(red|blue|green|yellow|golden|gold|black|white|grey|gray|brown|purple|"
     r"orange|pink|silver|crimson|navy|beige|teal|ochre|scarlet|emerald)\b",
+    re.I,
+)
+
+# Prendas y rasgos: si un prompt sin {personaje} los menciona junto a un color,
+# es que ya describe a su figura principal inline y el aviso está atendido.
+PRENDAS = re.compile(
+    r"\b(wearing|robe|robes|tunic|coat|jacket|dress|suit|hat|helmet|cloak|sash|"
+    r"uniform|apron|gown|beard|moustache|spectacles|crown|wreath)\b",
     re.I,
 )
 
@@ -108,13 +126,18 @@ def lint_scenes(story):
         # El fallo que costó 0,26 $ el 2026-08-15: las dos escenas del arco de
         # Norton sin personaje nombrado salieron visiblemente más pobres, porque
         # toda la riqueza del formato viene de esa descripción.
-        if not scene.get("characters_present"):
+        # Se da por atendido si el prompt describe a alguien inline —color más
+        # prenda o rasgo—, que es exactamente lo que el aviso pide. Sin esto
+        # seguiría saltando después de arreglarlo, y un aviso que no reconoce su
+        # propia solución enseña a ignorarlo.
+        descrito = COLORES.search(prompt) and PRENDAS.search(prompt)
+        if not scene.get("characters_present") and not descrito:
             avisos.append(
                 Aviso(
                     "escena-sin-personaje", donde,
-                    "no usa ningún {personaje}; describe a su figura principal con "
-                    "el mismo detalle dentro del prompt o saldrá con el estilo "
-                    "desnudo",
+                    "no usa ningún {personaje} ni describe a nadie; su figura "
+                    "principal necesita el mismo detalle dentro del prompt o la "
+                    "escena saldrá con el estilo desnudo",
                 )
             )
         if palabras < PROMPT_MINIMO:
@@ -137,9 +160,10 @@ def lint_scenes(story):
             avisos.append(
                 Aviso(
                     "prompt-vacio", donde,
-                    "reparte elementos pero no hay gente ni actividad. 'cajas a la "
-                    "derecha y gaviotas al fondo' cumple el reparto y da cuatro "
-                    "recortes aburridos",
+                    "revísalo: no encuentro gente ni actividad, solo objetos "
+                    "repartidos. 'cajas a la derecha y gaviotas al fondo' cumple el "
+                    "reparto y da cuatro recortes aburridos. (Detección por "
+                    "vocabulario: puede equivocarse)",
                 )
             )
     return avisos

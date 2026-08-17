@@ -56,10 +56,12 @@
    "categoria": "evento-mitologico",
    "epoca": "Mitología griega",
    "gancho": "Engañó al rey de los dioses para que aceptara las peores partes de los animales sacrificados, dejando la mejor carne para el sustento humano.",
-   "estado": "pendiente",
-   "modo": null,
-   "historias": [],
-   "fecha": null,
+   "estado": "usado",
+   "modo": "corto",
+   "historias": [
+    "engano-prometeo-mecona-es"
+   ],
+   "fecha": "2026-08-16",
    "motivo": "engano"
   },
   {
